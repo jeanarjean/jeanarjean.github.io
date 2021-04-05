@@ -5,8 +5,8 @@ song: 'oogway - two years'
 backgroundColor: 'white'
 tags: ["csharp", "csproj", "msbuild"]
 ---
-If you run into two assemblies with identical class and namepsace, you won't be able to differentiate them unless you use extern aliases. In order to use extern aliases, you first need to open your .csproj file of your project. You then need to modify the PackageReference or ProjetReference by adding the \<Aliases\> attribute inside.
-If it's another project in your solution:
+If your project contains two assemblies with identical classes and namespaces, you won't be able to differentiate them unless you use extern aliases. In order to use extern aliases, you first need to open the .csproj file of your project. And then modify the PackageReference or ProjectReference by adding the \<Aliases\> attribute.  
+If you're referencing another project in your solution, your .csproj should look like this:
 			 		 
 
 ```xml-doc
@@ -16,7 +16,7 @@ If it's another project in your solution:
 </ProjectReference>
 ```
 
-or in the case of a referenced Nuget
+or if you're referencing a Nuget then it should look like this:
 
 ```xml
 // Project.csproj
@@ -25,19 +25,20 @@ or in the case of a referenced Nuget
 </PackageReference>
 ```
 
-Then in any file you want to reference either project, simply use the following directive to make a distinction between both assemblies.
+Then in any file where you want to reference either project, simply use the following directive to make a distinction between both assemblies.
 
 ```csharp
 // whatever.cs
 extern alias CustomNamespace
 
 // You can then make a distinction between the two assemblies
+// The one you used the extern alias on will be available through the specified namespace
 using CustomNamespace::whatevernamespace.youwant
-// You can call the other assemblyThe other assembly which you didn't touch in your .csproj will still be using the global namespace
+// The other assembly which you didn't use the extern alias on will be available through the global namespace.
 using global::whatevernamespace.youwant
 ```
 
-You could also have two custom namespaces for each assembly.  
+You could also use two custom namespaces to differentiate the assemblies.  
 *ProjectName.csproj*
 ```xml
 // Project.csproj
