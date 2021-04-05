@@ -1,5 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Thu, 11 Mar 2021 03:45:17 GMT</lastBuildDate><item><title><![CDATA[How to Use Extern Alias to differentiate assemblies with the same namespace in C#]]></title><description><![CDATA[If you run into two assemblies with identical class and namepsace, you won't be able to differentiate them unless you use extern aliases. In…]]></description><link>https://jeanarjean.com/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/</guid><pubDate>Thu, 11 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If you run into two assemblies with identical class and namepsace, you won&apos;t be able to differentiate them unless you use extern aliases. In order to use extern aliases, you first need to open your .csproj file of your project. You then need to modify the PackageReference or ProjetReference by adding the &amp;#x3C;Aliases&gt; attribute inside.
-If it&apos;s another project in your solution:
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 05 Apr 2021 01:31:57 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 2]]></title><description><![CDATA[I recently came across this 
+Patrick Mackenzie article (aka Patio11) 
+where he talks about finishing the week with something you can show…]]></description><link>https://jeanarjean.com/blog/2021-04-04-finish-the-week-with-something-week-2/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-04-04-finish-the-week-with-something-week-2/</guid><pubDate>Mon, 05 Apr 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently came across this
+&lt;a href=&quot;https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing&quot;&gt;Patrick Mackenzie article (aka Patio11)&lt;/a&gt;
+where he talks about finishing the week with something you can show people in
+order to build a huge body of work over the course of one&apos;s lifetime.&lt;/p&gt;
+&lt;p&gt;This is week 2 since I started doing this, I didn&apos;t end up finishing what I was working on during the first week so
+there&apos;s no first week post, but I&apos;m hoping to publish something here every week in order to showcase what I&apos;ve done.&lt;/p&gt;
+&lt;p&gt;This week I opened a &lt;a href=&quot;https://github.com/crsnbrt/keysim/pull/51&quot;&gt;pull request&lt;/a&gt; for &lt;a href=&quot;https://keyboardsimulator.xyz/&quot;&gt;keyboardsimulator.xyz&lt;/a&gt;,
+keyboardsimulator is a Three.JS application to test out layouts and keycaps combinations for keyboards.
+I wanted to test keycaps on a layout similar to the upcoming GMMK Pro,
+so I created a layout similar to the GMMK Pro, I also had to program the render for a knob which is part of the
+GMMK Pro and needed for the layout to be complete. The color of the knob is changeable in the case options panel on the left.&lt;/p&gt;
+&lt;h5&gt;GMMK Pro Render&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;./black_2_1000x.png&quot;&gt;&lt;/p&gt;
+&lt;h5&gt;Keyboard simulator 75 Knob Layout (similar to GMMK pro)&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;./PRPreview.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Comments and feedback are appreciated at &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to Use Extern Alias to differentiate assemblies with the same namespace in C#]]></title><description><![CDATA[If your project contains two assemblies with identical classes and namespaces, you won't be able to differentiate them unless you use extern…]]></description><link>https://jeanarjean.com/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/</guid><pubDate>Thu, 11 Mar 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;If your project contains two assemblies with identical classes and namespaces, you won&apos;t be able to differentiate them unless you use extern aliases. In order to use extern aliases, you first need to open the .csproj file of your project. And then modify the PackageReference or ProjectReference by adding the &amp;#x3C;Aliases&gt; attribute.&lt;br&gt;
+If you&apos;re referencing another project in your solution, your .csproj should look like this:
 &lt;/p&gt;
 &lt;deckgo-highlight-code xml-doc  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
           &lt;code slot=&quot;code&quot;&gt;// Project.csproj
@@ -7,24 +24,25 @@ If it&apos;s another project in your solution:
 	&amp;lt;Aliases&amp;gt;CustomNamespace&amp;lt;/Aliases&amp;gt;
 &amp;lt;/ProjectReference&amp;gt;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;or in the case of a referenced Nuget&lt;/p&gt;
+&lt;p&gt;or if you&apos;re referencing a Nuget then it should look like this:&lt;/p&gt;
 &lt;deckgo-highlight-code xml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
           &lt;code slot=&quot;code&quot;&gt;// Project.csproj
 &amp;lt;PackageReference Include=&amp;quot;Microsoft.CodeAnalysis.FxCopAnalyzers&amp;quot; Version=&amp;quot;2.9.7&amp;quot;&amp;gt;
 	&amp;lt;Aliases&amp;gt;CustomNamespace&amp;lt;/Aliases&amp;gt;
 &amp;lt;/PackageReference&amp;gt;&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Then in any file you want to reference either project, simply use the following directive to make a distinction between both assemblies.&lt;/p&gt;
+&lt;p&gt;Then in any file where you want to reference either project, simply use the following directive to make a distinction between both assemblies.&lt;/p&gt;
 &lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
           &lt;code slot=&quot;code&quot;&gt;// whatever.cs
 extern alias CustomNamespace
 
 // You can then make a distinction between the two assemblies
+// The one you used the extern alias on will be available through the specified namespace
 using CustomNamespace::whatevernamespace.youwant
-// You can call the other assemblyThe other assembly which you didn&amp;#39;t touch in your .csproj will still be using the global namespace
+// The other assembly which you didn&amp;#39;t use the extern alias on will be available through the global namespace.
 using global::whatevernamespace.youwant&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;You could also have two custom namespaces for each assembly.&lt;br&gt;
+&lt;p&gt;You could also use two custom namespaces to differentiate the assemblies.&lt;br&gt;
 &lt;em&gt;ProjectName.csproj&lt;/em&gt;&lt;/p&gt;
 &lt;deckgo-highlight-code xml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
           &lt;code slot=&quot;code&quot;&gt;// Project.csproj
@@ -43,242 +61,7 @@ extern alias CustomNamespace2
 using CustomNamespace1::whatevernamespace.youwant
 using CustomNamespace2::whatevernamespace.youwant&lt;/code&gt;
         &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Comments and feedback are appreciated at &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Code Complete]]></title><description><![CDATA[It's been 16 years since the publication of the second edition of Code Complete and 27 years since the publication of the first edition…]]></description><link>https://jeanarjean.com/blog/2020-11-29-code-complete-16-years-later/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2020-11-29-code-complete-16-years-later/</guid><pubDate>Sun, 13 Dec 2020 22:26:00 GMT</pubDate><content:encoded>&lt;p&gt;It&apos;s been 16 years since the publication of the second edition of Code Complete and 27 years since the publication of the first edition.
-Considering this is a technical book, it is worth asking whether the book is worth a read considering its age and the evolution speed
-of software development.&lt;/p&gt;
-&lt;p&gt;The book is still relevant and it turns out developping software hasn&apos;t changed &lt;strong&gt;that much&lt;/strong&gt; during the last 16 years, yes the tools have evolved, but the foundations remain the same.
-The following articles explore my favorite excerpts from Code Coplete.&lt;/p&gt;
-&lt;h1&gt;The right metaphors for programming&lt;/h1&gt;
-&lt;p&gt;The right metaphor for prorgramming is construction, programming is close to the act of building something. &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;A small project will need less or no planning while a project with a big scope will need a lot of planning to
-minimize uncertainty and clarify requirements &apos;till they&apos;re TOO specified and there&apos;s nothing else that is an uncertainty.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The bigger the project, the harder it is do changes to the foundation since more things will depend on it. For example, in a shed, it&apos;s easy to change a whole wall or a whole room, in a big building,
-a room might have certain constraints or dependent rooms that make it much more complicated to change it.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;Pre-Requisistes, Defects and why Software Quality matters&lt;/h1&gt;
-&lt;h2&gt;Pre-Requisites&lt;/h2&gt;
-&lt;p&gt;Pre-Requisistes are one of the most impactful part of software construction, yet they are very often neglected as they are not a part of software construction that programmers typically like. A software that doesn&apos;t
-respond to what the client is expecting is no good.&lt;/p&gt;
-&lt;p&gt;In order to have a greater overview of the system, it is important to always consider what&apos;s the problem the software is trying to achieve.  &lt;em&gt;Don&apos;t waste time solving the wrong problem.&lt;/em&gt;
-&lt;em&gt;If a good problem definition hasn,t been specified, you might be solving the wrong problem during construction.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;About 20% of a software development project should be spent collecting pre-requisistes, a good sign that you have spent enough time is being able to tell yourself: &lt;/p&gt;
-&lt;p&gt;Try to identify and define the essentials requirements that will have the most impact on the project.&lt;/p&gt;
-&lt;p&gt;If requirements are unstable, treat requirements as its own project.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;It&apos;s as if you were a contractor called to work on a house. Your customer says, &quot;What will it cost to do the work?&quot; You reasonably ask,
-&quot;What do you want me to do?&quot; Your customer says, &quot;I can&apos;t tell you, but how much will it cost?&quot; You reasonably thank the custome for wasting your time and go home&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Attention to quality at the begining has a greater influence on product quality than attention at the end&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;Defects&lt;/h2&gt;
-&lt;p&gt;The more defects you have in the software you&apos;re building, the less you time you spend on building it. The later in the construction phase a defect is detected, the costlier it is to fix it. A defect that could have
-been spotted in the pre-requisite phase will be the costliest to correct.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;A defect, the farther on it is detected, the more costly it is,
-a defect of the planning phase detected in the implementation phase will be
-much more costly than if it had been detected in the planning phase.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Hence, it is important to ask oursevles how we can minimize defects during construction, so we can spend more time on construction.&lt;/p&gt;
-&lt;h2&gt;Software Quality&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;The General Principle of Software Quality is that improving quality reduces development costs. This principle is based on the fact that the best way to improve productivity to reduce the time spent reworking code.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The single biggest activity on most project is debugging and correcting code that doesn&apos;t work properly. Debugging and associated refactoring and other rework consume about 50 percent of the time on a traditional, naive software-development cycle. Reducing debugging by preventing errors improve productivity. Therefore, the most obvious method of shortening a development schedule is to improve the quality of the product and decrease the amount of time spent debugging and reworking the software.&lt;/p&gt;
-&lt;p&gt;software defect removal is actually the most expensive and time-consuming form of work for software.&lt;/p&gt;
-&lt;h3&gt;Software Quality Techniques&lt;/h3&gt;
-&lt;p&gt;Some software quality techniques presented in Code Complete seem to have gone out of fashion for, a useful learning to retain from Code Complete however is that no single software quality technique is sufficient
-to remove most of the defects found in the process of software development, software quality techniues are good in combination.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The upshot is that defect detection methods work better in combination than they do singly. (... )cumulative defect-dection efficieny is significantly higher than that of any individual technique.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Table 20-2. Defect-Detection Rates&lt;br&gt;
-| Removal Step |  Lowest Rate  | Modal Rate  | Highest Rate |
-| --- |  --- |  --- |  --- |
-| design reviews | 25% |  35%  |40%  |
-| Formal design inspections | 45% |  55% |  65% |
-| Informal code reviews | 20% |  25% |  35% |
-| Formal code inspections | 45% |  60% |  70% |
-| Modeling or prototyping | 35% |  65% |  80% |
-| Personal desk-checking of code | 20% |  40% |  60% |
-| Unit test | 15% |  30% |  50% |
-| New function (component) test | 20% |  30% |  35% |
-| Integration test | 25% |  35% |  40% |
-| Regression test | 15% |  25% |  30% |
-| System test | 25% |  40% |  55% |
-| Low-volume beta test (&amp;#x3C;10 sites) | 25% |  35% |  40% |
-| High-volume beta test (&gt;1,000 sites) | 60% |  75% |  85% |&lt;/p&gt;
-&lt;p&gt;Source: Adapted from Programming Productivity (Jones 1986a), &quot;Software Defect-Removal Efficiency&quot; (Jones 1996), and &quot;What We Have Learned About Fighting Defects&quot; (Shull et al. 2002).&lt;/p&gt;
-&lt;h1&gt;Software Construction&lt;/h1&gt;
-&lt;h2&gt;Software Architecture&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Architecture refers to design constraints of systemwide, whereas high-level design refers to design constraints that apply at the subsystem or multiple-class level, but not necessarily systemwide.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;A good architecture should fit the problem. When you look at the architecture, you should be pleased by how natural and easy the solution seems. It shouldn&apos;t look as if the problem and archietcture have been forced togheter with duct tape&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;It should be specified what the system aims, for a system that aims for maintenability over performance will be very different than a system designed for performance.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Program Organization&lt;/h3&gt;
-&lt;p&gt;The architecture should define the major building blocks of a program.
-&lt;em&gt;What each building block is responsible for should be well defined. A building block should have on area of responsibility, and it should know as little as possible about other building block&apos;s areas of responsibility. By minimizing what each building block knows about the other building blocks, you localize infromation about the design into single building blocks.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Furthermore, the architecture should explain why the program is structured this way.
-&lt;em&gt;In the architecture, you should find evidence that alternatives to the final organization were considered and find the reawsons for choosing the final organization over its alternatives. It,s frustating to work on a class when it seems as if the class&apos;s role in the system has not been cleary conceived.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Major classes&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should specify the major classes to be used. It should identify the responsibilities of each major class and how the class will interact with other classes.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Data Design:&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should describe the major files and tables design to be used.&lt;/em&gt;
-&lt;em&gt;During construction. such information gives you insight into the minds of the architects. During maintenance, the same insight is an invaluable aid. Without it, you&apos;re watching a foreign movie with no subtitles.&lt;/em&gt; &lt;/p&gt;
-&lt;h3&gt;Business Rules, business rules that impose certain constraints on the software.&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;If the architecture depends on specific business rules, it should identify them and describe the impact the rules have on the system&apos;s design.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;User Interface Design (decoupled from the main software)&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The user interface is often specified at requirements time. If it isn&apos;t, it should be specified in the software architecture. The architecture should specify major elements of web page formats, GUIs, command line interfaces, and so on. Careful architecture of the user interface makes the difference between a well-liked program and one that&apos;s never used&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Resource Management (managing scarce resources (threads, database connections, etc..))&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecutre should describe a plan for managing scarce resources such as database connections, threads, and handles.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Security&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should describe the approach to design-level and code-level secrutiy. If a threat model has not previosuly been built, it should be built at architecture time&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Performance&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;If performance is a cconcern, performance ghoals should be specified in the requirements.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Scalability&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should address how it will addresss growth in number of users, numbers of servers, numbber of network noodes, number of database records, size of database records, transaction volume, and so on. If the system is not expected to grow and scalablity is not an issue, the architecture should make that assumption explicit.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Internationalization&lt;/h3&gt;
-&lt;p&gt;The architecure should specify how you&apos;re going to handle internationalization.&lt;/p&gt;
-&lt;h3&gt;Error Processing&lt;/h3&gt;
-&lt;p&gt;Error processing guidelines should be defined at the architecture level. Here are some questions that are important to be considered.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Is error processing corrective or merely detective.&lt;/li&gt;
-&lt;li&gt;Is error detection active or passive?&lt;/li&gt;
-&lt;li&gt;How does the system propagate errors?&lt;/li&gt;
-&lt;li&gt;What are the convetions for handling error messages&lt;/li&gt;
-&lt;li&gt;How will exception be handled? The archietcture should address when the code can throw exceptions, where they will be caught, how they will be logged, how they will be documented, and so on.&lt;/li&gt;
-&lt;li&gt;Inside the program, at what level are errors handled? You can handle them at the point of detection, pass them off to an error-handling class, or pass them up the call chain.&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;What is the responsibility of each class for validating its input data.&lt;/p&gt;
-&lt;h3&gt;Fault Tolerance&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should also indicate the kind of fault tolerance expected. Fault tolerance is a colection of techniques that increase a system&apos;s reliability by detecting errors, recovering from them if possible, and containing their bad effects if not.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Architectural Feasibility&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture should demonstrate that the system is technically feasible.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Overengineering&lt;/h3&gt;
-&lt;p&gt;You can set the engineering requirements in the architecture documentation, this way you can avoid having multiple classes of different qualities.
-&lt;em&gt;The architecture should indicate cleary whether programmers should err on the side of overengineering or on the side of doing the simplest thing that works&lt;/em&gt;
-&lt;em&gt;A software is only as strong as the multiplications of all the weakest links.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Buy-vs.-build decisions&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The most radical solution to building software is not to build it at all-to buy it instead or to download opens-ource software for free.&lt;/em&gt;
-&lt;em&gt;If the architecture isn&apos;t using off-the-shelf components, it should explain the ways in which it expects custom-built components to surpass ready made libraries and components&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Reuse decisions&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;If the plan calls for using preexisting software, test cases, data formats or other materials, the architecture should explain how the reused software will be to conform ot the other architectural goals-if it will be made to comform.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Change Strategy&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;The architecture shold clearly describe a strategy for handling changes. The architecture should show that possible enchancements have been considered and that the enchancements most likely are also the easiest to implement.&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Design in Construction&lt;/h2&gt;
-&lt;p&gt;// TODO what is design
-&lt;em&gt;Regardless of how it&apos;s done, small projects benefit from careful design just as larger projects do.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Importance of managing complexity&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Managing complexity is the most important technical topic in software development. In my view, it&apos;s so important that Software&apos;s Primary Technical Imperative has to be managing complexity.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;The goal is to minimize the amount of a program you have to think about at any one time.&lt;/p&gt;
-&lt;p&gt;The goal of all software design techniques is to break a complicated problem into simple pieces.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Minimize the amout of essential complexity that anoyne&apos;s brain has to deal with at any one time.&lt;/li&gt;
-&lt;li&gt;Keep accidental complexity from needlessly proliferating.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;When I am wokring on a problem I never think about beauty. I think only how to solve the problem. But when I have finished, if the solution is not beautfiul, I know it is wrong.&lt;/em&gt; - R. Buckminster Fuller&lt;/p&gt;
-&lt;h3&gt;Desirable Characteristics of a Design&lt;/h3&gt;
-&lt;p&gt;//TODO this shit&lt;/p&gt;
-&lt;h4&gt;Minimal Complexity&lt;/h4&gt;
-&lt;p&gt;Make the design as easy as possible to understand.
-&lt;em&gt;If your design doesn&apos;t let you safely ignore most other parts of the program when you&apos;re immersed in one specific part, the design isn&apos;t doing its job.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Ease of Maintenance&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Think of the maintenance programmer as your audience, and then design the system to be self-explanatory.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Loose Coupling&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Loose coupling means designing so that you hold connections among different parts of a program to a minimum.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Extensibility&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Extensibility means that you can enhance a system without causing violence to the underlying structure.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Reusability&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Reusability means designing the system so that you can reuse pieces of it in other systems&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;High fan in&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;High fan-in refers to having a high number of classes that use a given class. High fan-in implies that a system has been designed to make good use of utility classes at the lower levels in the system.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Low-to-medium fan-out&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Low-to-medium fan-out means having a given class use a low-to-medium number of other classes.&lt;/em&gt; If a class uses too many classes, it&apos;s probably too complex.&lt;/p&gt;
-&lt;h4&gt;Portability&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Portability means designing the system so that you can easily move it to another environment.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Leanness&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Leanness means designing the system so that it has no extra parts&lt;/em&gt; &lt;em&gt;Voltaire said that a book is finished not when nothing more can be added but when nothing more can taken away.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Stratification&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;Stratification means trying to keep the levels of decomposition stratified so that you can view the system at any single level and get a consistent view. Design the system so that you can view it at one level without dipping into other levels.&lt;/em&gt;&lt;/p&gt;
-&lt;h4&gt;Standard techniques&lt;/h4&gt;
-&lt;p&gt;&lt;em&gt;The more a system relies on exotic pieces the more intimidating it will be for someone trying to undestand it the frist time. Try to give the whole system a familiar feeling by using standardized, common approaches.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;Managing Construction&lt;/h1&gt;
-&lt;h2&gt;How Program Size affects Construction&lt;/h2&gt;
-&lt;p&gt;The bigger the project, the more defects per lines of codes will be present, defects per line of code doesn&apos;t scale linearly, the bigger the project, the more
-defects per line of code is present.&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Project Size (in Lines of Code)&lt;/th&gt;
-&lt;th&gt;Typical Error Density&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Smaller than 2K&lt;/td&gt;
-&lt;td&gt; 0 25 errors per thousand lines of code (KLOC) &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2K 16K&lt;/td&gt;
-&lt;td&gt;0 40 errors per KLOC &lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;16K 64K&lt;/td&gt;
-&lt;td&gt;0.5 50 errors per KLOC&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;64K 512K&lt;/td&gt;
-&lt;td&gt;2 70 errors per KLOC&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt; 512K or more &lt;/td&gt;
-&lt;td&gt;4 100 errors per KLOC&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Sources: &quot;Program Quality and Programmer Productivity&quot; (Jones 1977), Estimating Software Costs (Jones 1998).&lt;/p&gt;
-&lt;p&gt;Productivity is also affected by the project size, the bigger the project, the less productivity is to be expected by programmers.&lt;br&gt;
-&lt;img src=&quot;images/timespentonconstruction.gif&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;Communication also doesn&apos;t scale linearly but mulltiplicatively, proportionally to the square of the number of people causing more time to be spent on
-communication and less on programming.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;images/communication.gif&quot;&gt;  &lt;/p&gt;
-&lt;h2&gt;Treating programmers as people&lt;/h2&gt;
-&lt;p&gt;Good programmers tend to cluster, as do bad programmers,
-&lt;em&gt;A study proved there was a 3.4 to 1 effort expanded and a 3 to 1 program size difference. Another study, a 5-1 difference in program size and a 2.6-to-1 in time required. Another study.. 80 percent of contribution comes from 20 percent of contributors.a team in the 15th percentile required 3.5 time as much work month as a team in the 90th percentile.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The implication for recruiting and hiring is clear. If you have to pay more to get to a top 10 percent programmer rather than a bottom 10 percent programmer, jump at the chance. You&apos;ll get an immediate payoff in the quality and productivity of the programmers your organization is able to retain because good programmers tend to cluster.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Physical Envrionment&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;In summary, if your workplace is a bottom-25 percent envrionment, you can realize about a 100 percent improvement in prdocutvirty by making it a top-25 percent environment. If your workplace is average, you can still realize a productivity improvement of 40 percent or more by making it a top-25 percent envrionment.&lt;/em&gt;&lt;/p&gt;
-&lt;h1&gt;Software Craftsmanship&lt;/h1&gt;
-&lt;h2&gt;Toolbox&lt;/h2&gt;
-&lt;p&gt;A programmer&apos;s toolbox, using the right tool can make a problem trivial where as using the wrong tools can make it a nightmare. &lt;em&gt;It&apos;s useful to have a large toolbox, in which a multitude of tools can be found, but it is even more to know how and when to apply these tools.&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;The software industry constantly develops new tools that reduce or eliminate some of the most tedious aspects of progrmaming. It is very important to stay up to date on tools in order to be able to do work efficiently.&lt;/p&gt;
-&lt;h2&gt;Personal Character&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;The whole job of programming is building air castles - it&apos;s one of the most puerly mental activities you can do.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Your employer can&apos;t force you to be a good programmer, a lot of times your employers isn&apos;t even in a position to judge whether you&apos;re good. If you want to be great, you&apos;re responsible for making yourself great , It&apos;s a matter of your personal character.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Character is one of the most important thing a software developer can posses, it takes a special kind of person in order to spend 8 hours in front of a monitor trying to solve problems.&lt;/p&gt;
-&lt;p&gt;Programming is one of the hardest mental task one can do, it is akin to building a sky castle in your head where any distraction will make the castle crumble.
-A mark of a good software developper is acknowledging the lack of mental capacity he has in order to comprehend the entirety of the source code human has for
-programming and trying to reduce the amount of information he needs at any single moment.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The inwardness of programming makes personal character especially important. You know how difficult it is to put in eight concentrated hours in one day.You&apos;ve probably had the experience of being burned out one day from concentrating too hard the day before or burned out one month after concentrating too hard the month before.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Intelligence and Humility&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Nobody is smart enough to program computers (...). The way you focus your intelligence is more important than how much intelligence you have (...). The people who are the best at programming are the people who realize how small their brains are. They are humble. The more humble you are, the faster you&apos;ll improve.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Curiosity&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Once you admit that your brain is too small to understand most programs and you realize that effective programming a search for ways to offset thhat fact, you begin a career-long search for ways to compensate. In the development of a superior programmer, curiosity about  technical subjects must be a priority. If you aren&apos;t curious enough to keep up with the changes, you might find yourself down at the old-programmers&apos; home playing cards with T-Bone Rex and the Brontosaurus sisters.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Programmers are so busy working they often don&apos;t have time to be curious about how they might do their job better.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Upgrading your awareness&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Build you awareness about of the development process.&lt;/strong&gt; &lt;em&gt;The more aware you are of the development process, whether from reading or fromy our own observation about software development, the better position you&apos;re in to udnerstand changes and to move your group in the right direction.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;If your workload consists entirely of short-term assignements that don&apos;t develop your skills, be dissatisfied. A third of what you need to know will be out of date in three years. You&apos;re in too much to spend time working for management that doesn&apos;t have your interest in mind.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Experiment&lt;/strong&gt;. &lt;em&gt;One effective way to learn programming is to experiment wtih programmingand the development process. If you don&apos;t know how a feature of your language works, write a short program to exercice the feature and see how it works. You&apos;re better off working with a short program to test a concept than you are writing a larger program with a feature you don&apos;t quite understand.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Read about problem solving&lt;/strong&gt; &lt;em&gt;It was found in a study that human beings don&apos;t always discover clever problem-solving strategies themselves, even though the same strategies could readily be taught to the same people.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Analyse and plan before you act.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Learn about succesful projects&lt;/strong&gt; &lt;em&gt;One good way to learn is to study the work of great programmers. Jon Bentley thinks that you should be able to sit down with a glass of brandy and a good cigar and read a program the way you would a good novel. That might not be as far-fetched as it sounds. Most people wouln&apos;t want to use their recreational time to scrutinize a 500-pagesource listing, but manypeople would enjoy studying a high-level diesn and dipping into more detailed source listings for selected areas.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Read!&lt;/strong&gt; &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Read the documentation or source code of things you use, you can develop a better understanding, more often than note a class you need has already been developped.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Read other books and periodicals&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;One book on software is more than most people in the software industry read each year. If you read even one good programming book every two months, roughly 35 pages a week, you&apos;ll soon have a firm grasp on the industry and distinguish yourself from nearly everyone around you.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Characteristics That Don&apos;t Matter as Much as You Might Think - Experience&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;People also put an absurd emphasis on the amount of experience programmers have. &quot;We want a programmer with five years of C programming experience&quot; is a silly statement, if a programmer hasn&apos;t learned C after a year or two, the next three year won&apos;t make much differrence. This kind of &quot;exeprience&quot; has little relationship to performance.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;In many fields, a professional who has a history of achivement can coast, relaxing and enoying the respect earned by a string soccesses. In software development, anyone who coast quickly becomes out of touch. To stay valuable, you have to stay current. For young hungry programmers, this is an advantage .Older programmers sometimes feel they&apos;ve already earned their stripes and resent having to prove themsleves year after year.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Habits&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;Bill Gates sasys that any programmer who will ever be good is good in the first few years. After that, whether a programmer is good not, is cast in concrete. After you&apos;ve been programming a long time, it&apos;s hard to suddenly start saying &quot;How do I make this loop fast?&quot; or &quot;How do I make this code more readable?&quot; These are habits that good programmers develop early.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;When you first learn something, learn it the right way. When you first do it, you&apos;re actively thinking about it and you still have an easy choice between doing it in a good way and doing it in a bad way. After you&apos;ve done it a few times, you pay less attetnion to what you&apos;re doing and &quot;force of habit&quot; takes over. Make sure the habits that take over are the ones you want.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;Pick your process&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Always be thinking, &quot;Am I doing this in the right order? Would changing the order make a difference? &quot;Consciously follow a good process. Low level processes also matter.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Software development is a creative exercise. If you don&apos;t understand the creative process, you&apos;re not getting the most out of the primary tool you use to create software-your brain. A bad process wastes your brain cycles. A good process leverages them to the maximum advantage.&lt;/em&gt;&lt;/p&gt;
-&lt;h2&gt;Experimentation&lt;/h2&gt;
-&lt;p&gt;// TODO FIX THIS
-&lt;em&gt;Electism has a close relative in experimenation. You need to experiment throughout the development process, but zealous inflexibility hobbles the impusle. To experiment effectively, you must be willing to change your beliefs based on the rseults fothe experiment. If you&apos;re not willing, experimentation is a grauitous waste of time.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;A blanket attempt to avoid mistakes is the biggest mistake of all.&lt;/em&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Free]]></title><description><![CDATA[Whoever must play, cannot play - James Carse, Finite and Infinite Games  Light Yakuza 0 spoilers ahead, nothing major The third chapter of…]]></description><link>https://jeanarjean.com/blog/2020-06-11-freeeee/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2020-06-11-freeeee/</guid><pubDate>Fri, 12 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Whoever must play, cannot play - James Carse, Finite and Infinite Games &lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Comments and feedback are appreciated at &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Free]]></title><description><![CDATA[Whoever must play, cannot play - James Carse, Finite and Infinite Games  Light Yakuza 0 spoilers ahead, nothing major The third chapter of…]]></description><link>https://jeanarjean.com/blog/2020-06-11-freeeee/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2020-06-11-freeeee/</guid><pubDate>Fri, 12 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Whoever must play, cannot play - James Carse, Finite and Infinite Games &lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Light Yakuza 0 spoilers ahead, nothing major&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The third chapter of Yakuza 0&lt;sup id=&quot;fnref-2&quot;&gt;&lt;a href=&quot;#fn-2&quot; class=&quot;footnote-ref&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; is named &apos;Gilded Cage&apos;, the chapter begins as a rich entitled man is causing
 trouble in a cabaret, the man thinking he can do anything. The man is interrupted by a young mysterious
