@@ -1,11 +1,11 @@
 .post-title {
   font-weight: 650;
 }
-:root{
-  --deckgo-highlight-code-background: #282a36	;
+:root {
+  --deckgo-highlight-code-background: #282a36;
   --deckgo-highlight-code-color: white;
   --deckgo-highlight-code-padding: 4px 16px;
-} 
+}
 
 .post-container {
   min-height: 100vh;
@@ -17,13 +17,13 @@
 }
 
 .post-content {
-  h1{
+  h1 {
     text-align: left;
     line-height: 2rem;
   }
   margin: auto;
   font-size: 1.05rem;
-  font-family: 'Helvetica', monospace;
+  font-family: "Helvetica", monospace;
   text-align: justify;
   line-height: 1.5rem;
   width: 40%;
@@ -33,14 +33,17 @@
   padding-right: 5vw;
   padding-top: 10px;
   padding-bottom: 20px;
-  p{
+  img {
+    width: 100%;
+  }
+  p {
     overflow: hidden;
   }
   a {
     color: rgb(49, 48, 48);
     transition: 0.3s;
-     /* Transition effects on hover (color) */
-    }
+    /* Transition effects on hover (color) */
+  }
   /* visited link */
   a:visited {
     color: rgb(49, 48, 48);
@@ -61,8 +64,4 @@
   .post-content {
     width: 80%;
   }
-}
-
-img {
-  width: 100%;
 }
