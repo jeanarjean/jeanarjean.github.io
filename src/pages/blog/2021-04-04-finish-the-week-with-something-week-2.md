@@ -3,7 +3,7 @@ title: Finish the Week with Something - Week 2
 date: '2021-04-04T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["life", "javascript", " opensource"]
+tags: ["weekly","life", "javascript", " opensource"]
 ---
 I recently came across this 
 [Patrick Mackenzie article (aka Patio11)](https://training.kalzumeus.com/newsletters/archive/do-not-end-the-week-with-nothing) 
