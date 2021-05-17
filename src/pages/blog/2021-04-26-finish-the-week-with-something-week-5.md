@@ -3,7 +3,7 @@ title: Finish the Week with Something - Week 5
 date: '2021-04-26T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["weekly", "life", "javascript", " opensource"]
+tags: ["weekly", "life", "starcraft", " gaming"]
 ---
 # Summary
 The two last weeks were failures programming wise, I didn't work on side projects related to programming although I wanted to, I did however work on a goal I have set back in August 2020 which is to reach the Master division in Starcraft 2 in a year.
