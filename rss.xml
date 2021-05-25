@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 17 May 2021 02:07:38 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 8]]></title><description><![CDATA[Summary I've reached the goal I had set for myself back in August of 2020 which was to reach the Master Division in Starcraft 2. I started…]]></description><link>https://jeanarjean.com/blog/2021-05-16-finish-the-week-with-something-week-8/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-05-16-finish-the-week-with-something-week-8/</guid><pubDate>Mon, 17 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 25 May 2021 03:56:17 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 9]]></title><description><![CDATA[Summary I have decided on goals for the upcoming weeks. I've decided to run a half marathon, setup the development/production environment…]]></description><link>https://jeanarjean.com/blog/2021-05-24-finish-the-week-with-something-week-9/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-05-24-finish-the-week-with-something-week-9/</guid><pubDate>Tue, 25 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;I have decided on goals for the upcoming weeks. I&apos;ve decided to run a half marathon, setup the development/production environment for my side projects.&lt;/p&gt;
+&lt;h1&gt;Running&lt;/h1&gt;
+&lt;p&gt;Having a morning run definitely improves my mood during the day, combining this with a cold shower and waking up
+whenever my body feels like it (usually between 7 and 8am) has improved my quality of life quite a lot. I feel a lot
+less tired during the day and my brain manages to be productive most of the day where it used to have down times where
+it would feel too tired to progress.&lt;/p&gt;
+&lt;p&gt;I&apos;ve improved my 5km pace quite a lot, I used to run 5km with a pace of 6 min/km and today I&apos;ve managed to reach
+a 5min/km pace. I&apos;ll prepare to run for a half marathon within 4 months.&lt;/p&gt;
+&lt;h1&gt;Side Project &lt;em&gt;Architecting&lt;/em&gt;&lt;/h1&gt;
+&lt;p&gt;My side project environment will probably be over engineered, but I personally hate working on poorly engineered projects. Therefore, if I want to stay sane, deployment and project setup needs to be as clean and seamless as possible.&lt;/p&gt;
+&lt;p&gt;I want to create a side project environment where all my projects can talk to each other via a VPN, I want the deployment of all my nodes/side project to be as programming language agnostic as possible. I want to minimize cost, ideally I
+don&apos;t want to pay more than 20-25cad, up to 50cad dollars a month for the whole thing. Self-Hosting would probably be the &lt;em&gt;cheaper&lt;/em&gt;
+option although that&apos;d would also be the more time intensive and since I value my time, self-hosting isn&apos;t really an
+option.&lt;/p&gt;
+&lt;p&gt;The pretty obvious setup I&apos;m thinking of using is having a managed Kubernetes instance deploying docker container, the
+pipelines should be pretty simple too since the core thing they have to do is build the docker image and publish it to
+a repository, which also implies I need a private repository for my docker images.&lt;/p&gt;
+&lt;p&gt;So it seems I&apos;m gonna need the following to run my project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Managed Kubernetes Instance&lt;/li&gt;
+&lt;li&gt;Container image repository&lt;/li&gt;
+&lt;li&gt;A managed postgre SQL instance maybe?&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Finish the Week with Something - Week 8]]></title><description><![CDATA[Summary I've reached the goal I had set for myself back in August of 2020 which was to reach the Master Division in Starcraft 2. I started…]]></description><link>https://jeanarjean.com/blog/2021-05-16-finish-the-week-with-something-week-8/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-05-16-finish-the-week-with-something-week-8/</guid><pubDate>Mon, 17 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;I&apos;ve reached the goal I had set for myself back in August of 2020 which was to reach the Master Division in Starcraft 2. I started running again.
 I am setting new goals for the future.&lt;/p&gt;
 &lt;h1&gt;Starcraft 2&lt;/h1&gt;
