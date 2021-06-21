@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/layout';
-import Cart from './Cart';
+import Cart from './cart';
 import './index.scss';
 import StoreItem from './storeItem';
 
