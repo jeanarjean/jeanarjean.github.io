@@ -1,10 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 22 Jun 2021 01:00:02 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 14]]></title><description><![CDATA[Summary Finished moving, biked, deployed my side project. Cycling Biked 120 km last week with 1413m ,I'm getting better at climbing and I…]]></description><link>https://jeanarjean.com/blog/2021-06-21-finish-the-week-with-something-week-14/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-06-21-finish-the-week-with-something-week-14/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Sun, 27 Jun 2021 16:27:13 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 15]]></title><description><![CDATA[Summary Acquired a new domain, setup some DNS stuff. Kubernetes and Web Stuff Acquired a new domain, huitoctobre.com, named after the song…]]></description><link>https://jeanarjean.com/blog/2021-06-27-finish-the-week-with-something-week-15/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-06-27-finish-the-week-with-something-week-15/</guid><pubDate>Mon, 28 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;Acquired a new domain, setup some DNS stuff.&lt;/p&gt;
+&lt;h1&gt;Kubernetes and Web Stuff&lt;/h1&gt;
+&lt;p&gt;Acquired a new domain, huitoctobre.com, named after the song Huit Octobre 1971 by Cortex which was famously sampled by Madlib on the MF Doom
+track One Beer. This is the website I&apos;m gonna use to host my projects. Otherwise I delved into automatic DNS management using
+&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-automatically-manage-dns-records-from-digitalocean-kubernetes-using-externaldns&quot;&gt;ExternalDNS&lt;/a&gt;
+which lets you create an A record in Cloud Ocean by simply applying an annotations to a Kubernetes Service. I ended up having to modify
+the default template Visual Studio generates to include annotations in the service.yaml file. This way I can assign a domain or subdomain name to my load balancer which is used as a gateway to my Reflection Service.&lt;/p&gt;
+&lt;deckgo-highlight-code yaml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template &amp;quot;reflectionapi.fullname&amp;quot; . }}
+  labels:
+    app: {{ template &amp;quot;reflectionapi.name&amp;quot; . }}
+    chart: {{ template &amp;quot;reflectionapi.chart&amp;quot; . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+{{- with .Values.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template &amp;quot;reflectionapi.name&amp;quot; . }}
+    release: {{ .Release.Name }}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Then I simply added the annotation value to my value.yaml file.&lt;/p&gt;
+&lt;deckgo-highlight-code yaml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;service:
+  type: LoadBalancer
+  port: 80
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: &amp;quot;huitoctobre.com&amp;quot;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;</content:encoded></item><item><title><![CDATA[Finish the Week with Something - Week 14]]></title><description><![CDATA[Summary Finished moving, biked, deployed my side project. Cycling Biked 120 km last week with 1413m ,I'm getting better at climbing and I…]]></description><link>https://jeanarjean.com/blog/2021-06-21-finish-the-week-with-something-week-14/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-06-21-finish-the-week-with-something-week-14/</guid><pubDate>Tue, 22 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;Finished moving, biked, deployed my side project.&lt;/p&gt;
 &lt;h1&gt;Cycling&lt;/h1&gt;
 &lt;p&gt;Biked 120 km last week with 1413m ,I&apos;m getting better at climbing and I really enjoy it too, I&apos;m also getting better at going downhill and turning
 at high speed by shifting my weight on the bike.&lt;/p&gt;
 &lt;h1&gt;Kubernetes&lt;/h1&gt;
-&lt;p&gt;Deployed my side project using Kubernetes, the simple application is now here &lt;a href=&quot;http://104.248.110.222/&quot;&gt;http://104.248.110.222/&lt;/a&gt;, I need to find a way to use a single IP and map different project to the same url (but different path), I&apos;ll work on this this week.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Finish the Week with Something - Week 11]]></title><description><![CDATA[Summary Biked a lot, got nothing done programming wise, amazing week. I'm moving this week, I'll have more time for side project stuff once…]]></description><link>https://jeanarjean.com/blog/2021-05-31-finish-the-week-with-something-week-11 copy/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-05-31-finish-the-week-with-something-week-11 copy/</guid><pubDate>Tue, 08 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;Deployed my side project using Kubernetes, the simple application is now here &lt;a href=&quot;http://104.248.110.222/&quot;&gt;http://104.248.110.222/&lt;/a&gt;, I need to find a way to use a single IP and map different project to the same url (but different path), I&apos;ll work on this this week.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Finish the Week with Something - Week 11]]></title><description><![CDATA[Summary Biked a lot, got nothing done programming wise, amazing week. I'm moving this week, I'll have more time for side project stuff once…]]></description><link>https://jeanarjean.com/blog/2021-05-31-finish-the-week-with-something-week-11/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-05-31-finish-the-week-with-something-week-11/</guid><pubDate>Tue, 08 Jun 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;Biked a lot, got nothing done programming wise, amazing week. I&apos;m moving this week, I&apos;ll have more time for side project stuff once I&apos;ll be
 settled.&lt;/p&gt;
 &lt;h1&gt;Cycling&lt;/h1&gt;
