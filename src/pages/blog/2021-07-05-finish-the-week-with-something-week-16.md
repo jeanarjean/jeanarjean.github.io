@@ -13,7 +13,7 @@ Did my longest ride ever this weekend, it was a lot of fun, I rode 118km in 4,5 
 for a longer ride.
 
 # Programming
-Fixed DNS issues, [huitoctobre.com](http://huitoctobre.com) and [echo.huitoctobre.com] are now online, it's gonna be really easy from now on to deploy new side projects,
+Fixed DNS issues, [reflection.huitoctobre.com](http://reflection.huitoctobre.com) and [echo.huitoctobre.com]((http://echo.huitoctobre.com)) are now online, it's gonna be really easy from now on to deploy new side projects,
 I should probably migrate from separate load balancers to a single ingress, but that's for another day I guess.
 
 # Thoughts
