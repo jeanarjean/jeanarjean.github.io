@@ -1,10 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 05 Jul 2021 23:21:32 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 16]]></title><description><![CDATA[Summary Cycling, DNS and shower thoughts. Cycling Did my longest ride ever this weekend, it was a lot of fun, I rode 118km in 4,5 hours, it…]]></description><link>https://jeanarjean.com/blog/2021-07-05-finish-the-week-with-something-week-16/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-07-05-finish-the-week-with-something-week-16/</guid><pubDate>Tue, 06 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Jul 2021 02:54:44 GMT</lastBuildDate><item><title><![CDATA[Finish the Week with Something - Week 17]]></title><description><![CDATA[Summary A bit of Game Dev, a bit bike mechanic work and I've finished reading C# In Depth Game Dev Followed Amir Rajan and published my…]]></description><link>https://jeanarjean.com/blog/2021-07-11-finish-the-week-with-something-week-17/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-07-11-finish-the-week-with-something-week-17/</guid><pubDate>Mon, 12 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
+&lt;p&gt;A bit of Game Dev, a bit bike mechanic work and I&apos;ve finished reading C# In Depth&lt;/p&gt;
+&lt;h1&gt;Game Dev&lt;/h1&gt;
+&lt;p&gt;Followed Amir Rajan and published my first ever indie game which isn&apos;t actually a game but a simple dvd sleep screen, and instead of the
+DVD logo, I&apos;ve put my friends face on there. It was the first time I touched DragonRuby which is a game engine in Ruby developed by Ryan C.
+Gordon, one of the person behind SDL, and Amir Rajan, the creator of notably the Dark Room. I really DragonRuby at this point, it takes
+a code first approach which to me is a major positive point for the engine, I tend to dislike game engine with a heavy coupling to their GUIs, it makes developing a game much more laborious as you have to figure out where everything is and your interaction with the engine is
+restricted by how the interface expects you to interact with it. Most importantly, it&apos;s really fun to be able to interact directly with
+every part of the engine programmatically as this gives me a lot more flexibility. I love being able to read the doc of the game engine
+without having to refer to videos which show me where things in the game engine are.&lt;/p&gt;
+&lt;h1&gt;Bike Mechanic&lt;/h1&gt;
+&lt;p&gt;This week I learned how to adjust the front derailleurs of my bike, it was pretty shite overall and it took me two hours to get it kind of
+right, but I&apos;m glad I did it, it&apos;s always fun to learn how the things you learn work and being able to repair it yourself.&lt;/p&gt;
+&lt;h1&gt;C# in depth&lt;/h1&gt;
+&lt;p&gt;I finished reading C# in Depth by Jon Skeet, it was a really great experience to learn how the language was designed and to go through a lot
+of C# features that I didn&apos;t understand fully, hopefully having read this book will make a better C# programmer by knowing more about every
+nook and cranny of the language.&lt;/p&gt;
+&lt;h1&gt;Reading / Books&lt;/h1&gt;
+&lt;p&gt;I feel like I should spend more time reading, my head has been pretty empty which I like since it allows me to focus, however my lack of
+reading this year has made me pretty much incapable of having exciting new ideas. I read TOO much last year (especially given my slow
+reading speed) and I didn&apos;t have enough time to digest the 23 books I read, there was a lot to be excited about in these books, but since
+I read too much, I couldn&apos;t give each books enough thoughts. I told myself I wouldn&apos;t do the same mistake this year by reading way less,
+but I feel that this time it&apos;s really not enough reading. &lt;/p&gt;
+&lt;p&gt;Anyway, I&apos;ve been reading The Making of Prince of Persia by Jordan Mechner which is a
+collection of journal entries during the years he worked on the original Prince of Persia, it&apos;s very interesting but not giving me new ideas.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Finish the Week with Something - Week 16]]></title><description><![CDATA[Summary Cycling, DNS and shower thoughts. Cycling Did my longest ride ever this weekend, it was a lot of fun, I rode 118km in 4,5 hours, it…]]></description><link>https://jeanarjean.com/blog/2021-07-05-finish-the-week-with-something-week-16/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-07-05-finish-the-week-with-something-week-16/</guid><pubDate>Tue, 06 Jul 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Summary&lt;/h1&gt;
 &lt;p&gt;Cycling, DNS and shower thoughts.&lt;/p&gt;
 &lt;h1&gt;Cycling&lt;/h1&gt;
 &lt;p&gt;Did my longest ride ever this weekend, it was a lot of fun, I rode 118km in 4,5 hours, it was a blast, I want to go again, and go faster and
 for a longer ride.&lt;/p&gt;
 &lt;h1&gt;Programming&lt;/h1&gt;
-&lt;p&gt;Fixed DNS issues, huitoctobre.com and echo.huitoctobre.com are now online, it&apos;s gonna be really easy from now on to deploy new side projects,
+&lt;p&gt;Fixed DNS issues, &lt;a href=&quot;http://huitoctobre.com&quot;&gt;huitoctobre.com&lt;/a&gt; and [echo.huitoctobre.com] are now online, it&apos;s gonna be really easy from now on to deploy new side projects,
 I should probably migrate from separate load balancers to a single ingress, but that&apos;s for another day I guess.&lt;/p&gt;
 &lt;h1&gt;Thoughts&lt;/h1&gt;
 &lt;p&gt;Been thinking I lost the curiosity I had when I was younger, I used to want to know everything, nowadays I&apos;m just burned on learning, it
