@@ -6,7 +6,7 @@ backgroundColor: 'white'
 tags: ["weekly", "game dev", "cycling", "books"]
 ---
 # Summary
-A bit of Game Dev, a bit bike mechanic work and I've finished reading C# In Depth
+A bit of Game Dev, a bit of bike mechanic work and I finished reading C# In Depth
 
 # Game Dev
 Followed Amir Rajan and published my first ever indie game which isn't actually a game but a simple dvd sleep screen, and instead of the
