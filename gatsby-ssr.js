@@ -1,7 +1,7 @@
 import storeWrapper from "./storeWrapper"
 import React from "react";
 
-const PANELBEAR_SITE_ID = "GETYOUROWNID";
+const PANELBEAR_SITE_ID = process.env.PANEL_BEAR_ID
 
 const PANELBEAR_CONFIG = {
   site: PANELBEAR_SITE_ID,
