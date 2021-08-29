@@ -13,7 +13,7 @@ var currentColorIndex = -1;
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group },
+    allMarkdownRemark: { group: tags },
     site: {
       siteMetadata: { title },
     },
@@ -24,7 +24,9 @@ const TagsPage = ({
       <div className="tags-container">
         <h1>Tags</h1>
         <ul>
-          {group.map(tag => {
+          {tags.sort((a, b) => { 
+            return b.totalCount - a.totalCount
+           }).map(tag => {
             currentColorIndex = (currentColorIndex + 1) % 4;
             return (
               <span key={tag.fieldValue}
@@ -36,7 +38,8 @@ const TagsPage = ({
                     textDecoration: 'none',
                     borderRadius: '10000000px',
                     color: '#242424',
-                    fontWeight: '550'
+                    fontWeight: '550',
+                    lineHeight: '50px'
                   }}
                 >
                   {tag.fieldValue} ({tag.totalCount})

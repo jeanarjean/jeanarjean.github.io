@@ -15,7 +15,7 @@ class BlogIndex extends React.Component {
           <Card
             name="Photography"
             link="/projects/photography/"
-            image="projects/photography/2017_fall_montreal/sipping.jpg"
+            image="/projects/photography/2017_fall_montreal/sipping.jpg"
             alt="2017_fall_montreal/sipping.jpg"
           >
             {' '}
@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
           <Card
             name="Programming"
             link="/projects/programming/"
-            image="projects/programming.png"
+            image="/projects/programming.png"
             alt="programming.jpg"
           >
             {' '}
