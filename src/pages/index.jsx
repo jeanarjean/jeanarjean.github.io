@@ -30,10 +30,10 @@ class WebsiteHome extends React.Component {
             <h1>Last Photography Project:</h1>
             <div className="latest-photography-card">
               <SmallCard
-                name="Montreal, Summer 2019"
-                link="/projects/photography/2019_summer_montreal"
-                image="projects/photography/2019_summer_montreal/temptation.jpg"
-                alt="projects/photography/2019_summer_montreal/grad.jpg"
+                name="2021"
+                link="/projects/photography/2021"
+                image="projects/photography/2021/2021-1.jpg"
+                alt="projects/photography/2021/2021-1.jpg"
                 className="latest-photography-card"
               >
                 {' '}
