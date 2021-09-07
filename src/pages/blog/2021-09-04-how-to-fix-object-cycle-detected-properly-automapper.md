@@ -149,7 +149,7 @@ using the library AutoMapper.
 AutoMapper is a library that allows us to map an object from one object type to another. AutoMapper does this by trying to map properties
 with the same name on the source object and the target object.
 
-We start by adding the following Nuget to your .csproj file
+We start by adding the following Nuget to our .csproj file
 ``` xml
 //NameOfProject.cs
     <ItemGroup>
@@ -157,7 +157,7 @@ We start by adding the following Nuget to your .csproj file
     </ItemGroup>        
 ```
 
-Then we add an AutoMapper Profile class to your project which defines the mapping 
+Then we add an AutoMapper Profile class to our project which defines the mapping 
 
 ```csharp
 // StoreProfile.cs
@@ -181,15 +181,7 @@ Then in our Startup class, we need to add AutoMapper to our IoC container
     }
 ```
 
-Finally in the controller, we inject an IMapper instance and modify our Get Method for it to use AutoMapper.
-
-```csharp
-// Startup.cs
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddAutoMapper(typeof(StoreProfile));
-    }
-```
+Finally in our controller, we inject an IMapper instance and modify our Get Method for it to use AutoMapper.
 
 ```csharp
 // StoreController.cs
