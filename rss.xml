@@ -1,4 +1,134 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 07 Sep 2021 19:30:46 GMT</lastBuildDate><item><title><![CDATA[How to Fix "A possible object cycle was detected" properly in your .Net project using AutoMapper]]></title><description><![CDATA[This issue has already been pretty well discussed here. However, I think this solution could be made easier to maintain at the cost of…]]></description><link>https://jeanarjean.com/blog/2021-09-04-how-to-fix-object-cycle-detected-properly-automapper/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-09-04-how-to-fix-object-cycle-detected-properly-automapper/</guid><pubDate>Sun, 05 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This issue has already been pretty well discussed &lt;a href=&quot;https://khalidabuhakmeh.com/ef-core-and-aspnet-core-cycle-issue-and-solution&quot;&gt;here&lt;/a&gt;. However, I think this solution could be made easier to maintain at the cost of adding an additional dependency to your project.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jean.arjean]]></title><description><![CDATA[jean.arjean's personal webiste!!! Hooray!]]></description><link>https://jeanarjean.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 08 Sep 2021 23:45:58 GMT</lastBuildDate><item><title><![CDATA[How to Validate your AutoMapper Configuration using Unit Test]]></title><description><![CDATA[Disclaimer: this article is written using XUnit but could be done using any test framework. The simplest way to test your AutoMapper…]]></description><link>https://jeanarjean.com/blog/2021-09-07-how-to-validate-automapper-configuration-using-unit-test/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-09-07-how-to-validate-automapper-configuration-using-unit-test/</guid><pubDate>Wed, 08 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Disclaimer: this article is written using XUnit but could be done using any test framework.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The simplest way to test your AutoMapper configuration is to write a test and create a MappingConfiguration in the test that you&apos;re going to validate.&lt;/p&gt;
+&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;using Api.V1.Stores.Resources;
+using AutoMapper;
+using Xunit;
+
+namespace UnitTest
+{
+    public class MapperTestManual
+    {
+        private readonly MapperConfiguration _mapperConfiguration;
+        
+        public MapperTestManual()
+        {
+            _mapperConfiguration = new MapperConfiguration(cfg =&amp;gt;
+            {
+                cfg.AddProfile&amp;lt;StoreProfile&amp;gt;();
+
+            });
+        }
+            
+        [Fact]
+        public void ValidateAutoMapperConfiguration()
+        {
+            _mapperConfiguration.AssertConfigurationIsValid();
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;This is very good, however when we create a new AutoMapper profile, we have to remind ourselves to add it to our test.&lt;/p&gt;
+&lt;p&gt;We can automate this using AutoMapper extensions.&lt;/p&gt;
+&lt;p&gt;Depending on if you&apos;re using AutoFac or the default Microsoft IoC container, the tests won&apos;t be the same but will be similar. I&apos;ll show
+you both alternatives in this article.&lt;/p&gt;
+&lt;h1&gt;Using Microsoft IoC Container&lt;/h1&gt;
+&lt;p&gt;Note that this requires the use of the package: &lt;/p&gt;
+&lt;deckgo-highlight-code xml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;PackageReference Include=&amp;quot;AutoMapper.Extensions.Microsoft.DependencyInjection&amp;quot; Version=&amp;quot;8.1.1&amp;quot; /&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Given a Startup class that has a ConfigureServices method that looks like this:&lt;/p&gt;
+&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddAutoMapper(typeof(Startup).Assembly);
+        }&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Our test class should look like this.&lt;/p&gt;
+&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;using Api;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
+using Xunit;
+
+namespace UnitTest
+{
+    public class MapperTestServiceCollection
+    {
+        private readonly IConfigurationProvider _mapperConfiguration;
+        
+        public MapperTestServiceCollection()
+        {
+            var services = new ServiceCollection();
+            services.AddAutoMapper(typeof(Startup).Assembly);
+            var container = services.BuildServiceProvider();
+
+            var mapper = container.GetService&amp;lt;IMapper&amp;gt;();
+            _mapperConfiguration = mapper.ConfigurationProvider;
+        }
+            
+        [Fact]
+        public void ValidateAutoMapperConfiguration()
+        {
+            _mapperConfiguration.AssertConfigurationIsValid();
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;h1&gt;Using Autofac&lt;/h1&gt;
+&lt;p&gt;Note that this requires to add the dependency AutoMapper.Contrib.Autofac.DependencyInjection.&lt;/p&gt;
+&lt;deckgo-highlight-code xml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;&amp;lt;PackageReference Include=&amp;quot;AutoMapper.Contrib.Autofac.DependencyInjection&amp;quot; Version=&amp;quot;5.4.0&amp;quot; /&amp;gt;&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Given an AutoFac Module looking like this:&lt;/p&gt;
+&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;// ApiModule.cs
+using Autofac;
+using AutoMapper.Contrib.Autofac.DependencyInjection;
+
+namespace Api
+{
+    public class ApiModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            builder.RegisterAutoMapper(typeof(Startup).Assembly);
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;Our test to validate our configuration will look like this.&lt;/p&gt;
+&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
+          &lt;code slot=&quot;code&quot;&gt;//MapperTest.cs
+using Api;
+using Autofac;
+using AutoMapper;
+using Xunit;
+
+namespace UnitTest
+{
+    public class MapperTestAutoFac
+    {
+        private readonly MapperConfiguration _mapperConfiguration;
+        
+        public MapperTestAutoFac()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new ApiModule());
+            var container = builder.Build();
+
+            _mapperConfiguration = container.Resolve&amp;lt;MapperConfiguration&amp;gt;();
+        }
+            
+        [Fact]
+        public void ValidateAutoMapperConfiguration()
+        {
+            _mapperConfiguration.AssertConfigurationIsValid();
+        }
+    }
+}&lt;/code&gt;
+        &lt;/deckgo-highlight-code&gt;
+&lt;p&gt;If you have further questions, feel free to ask them here: &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Validate%20AutoMapper%20Configuration&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to Fix "A possible object cycle was detected" properly in your .Net project using AutoMapper]]></title><description><![CDATA[This issue has already been pretty well discussed here. However, I think this solution could be made easier to maintain at the cost of…]]></description><link>https://jeanarjean.com/blog/2021-09-04-how-to-fix-object-cycle-detected-properly-automapper/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-09-04-how-to-fix-object-cycle-detected-properly-automapper/</guid><pubDate>Sun, 05 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This issue has already been pretty well discussed &lt;a href=&quot;https://khalidabuhakmeh.com/ef-core-and-aspnet-core-cycle-issue-and-solution&quot;&gt;here&lt;/a&gt;. However, I think this solution could be made easier to maintain at the cost of adding an additional dependency to your project.&lt;/p&gt;
 &lt;p&gt;Given a project containing the following entities:&lt;/p&gt;
 &lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
           &lt;code slot=&quot;code&quot;&gt;// Product.cs
@@ -172,181 +302,7 @@ with the same name on the source object and the target object.&lt;/p&gt;
         &lt;/deckgo-highlight-code&gt;
 &lt;p&gt;There we have it, a different solution to the object cycle detected problem which I believe is very maintainable and easy
 to use.&lt;/p&gt;
-&lt;p&gt;If you have further questions, feel free to ask them here: &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to Fix "A possible object cycle was detected" properly in your .Net project using AutoMapper]]></title><description><![CDATA[This issue has already been pretty well discussed here. However, I think this solution could be made easier to maintain at the cost of…]]></description><link>https://jeanarjean.com/blog/2021-09-04-how-to-type-your-actionresult-controller/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-09-04-how-to-type-your-actionresult-controller/</guid><pubDate>Sun, 05 Sep 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;This issue has already been pretty well discussed &lt;a href=&quot;https://khalidabuhakmeh.com/ef-core-and-aspnet-core-cycle-issue-and-solution&quot;&gt;here&lt;/a&gt;. However, I think this solution could be made easier to maintain at the cost of adding an additional dependency to your project.&lt;/p&gt;
-&lt;p&gt;Given a project containing the following entities:&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// Product.cs
-    public class Product
-    {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-       	public virtual Store Store { get; set; }
-
-        public string StoreId { get; set; }
-
-    }
-
-// Store.cs
-  	public class Store
-    {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-        public IEnumerable&amp;lt;Product&amp;gt; Products { get; set; }
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreController.cs
-    [HttpGet(&amp;quot;{storeId}&amp;quot;)]
-    public async Task&amp;lt;IActionResult&amp;gt; GetStore([FromRoute] string storeId)
-    {
-        var result = await _dbContext.Set&amp;lt;Store&amp;gt;().Include(x =&amp;gt; x.Prints).FirstAsync(x =&amp;gt; x.Id == storeId);
-
-        return new OkObjectResult(result);
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;This would result in an exception being thrown while trying to serialize the object, &quot;System.Text.Json.JsonException: A possible object cycle was detected&quot; if the store has any product
-as there&apos;s an endless relationship cycle between a Store and a Product.&lt;/p&gt;
-&lt;p&gt; We can solve this by mapping our Product and Store entities to Resource objects, using resource objects, we can dictate
-what the users of our API will see when they query it instead of having to adapt our Database Entity to work with our API.&lt;/p&gt;
-&lt;p&gt; Our resources could look like this.&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// ProductResource.cs
-    public class ProductResource
-    {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string StoreId { get; set; }
-    }
-
-// StoreResource.cs
-  	public class StoreResource
-    {
-        public string Id { get; set; }
-
-        public string Name { get; set; }
-
-        public IEnumerable&amp;lt;string&amp;gt; ProductIds { get; set; }
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;And our controller would look like this&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreController.cs
-    [HttpGet(&amp;quot;{storeId}&amp;quot;)]
-    public async Task&amp;lt;IActionResult&amp;gt; GetStore([FromRoute] string storeId)
-    {
-        var result = await _dbContext.Set&amp;lt;Store&amp;gt;.FindAsync(storeId);
-        var storeResource = new StoreResource{
-            Id = result.Id,
-            Name = result.Name,
-            Path = result.Path,
-            Prints =  result.Prints.Select(x =&amp;gt; new PrintResource
-            {
-                Id = x.Id,
-                Name = x.Name,
-                StoreId = x.StoreId
-            })
-        };
-        return new OkObjectResult(storeResource);
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;The problem is solved and we no longer have the error we started with, however this isn&apos;t very portable, we&apos;d have to copy and paste this
-code in all our controllers that return a store which would be pretty messy, verbose and error prone. Furthermore, when we&apos;d start adding
-additional properties to our store, we&apos;d have to think about every controller where this logic is in place and go change it manually.&lt;/p&gt;
-&lt;p&gt;A simple solution is to maintain an extension class for our store which we can reuse anywhere in our codebase.&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreExtension.cs
-    public static class StoreExtension
-    {
-        public static StoreResource ToResource(this Store store)
-        {
-            return new StoreResource{
-                Id = store.Id,
-                Name = store.Name,
-                Path = store.Path,
-                Prints =  store.Prints?.Select(x =&amp;gt; new PrintResource
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    StoreId = x.StoreId
-                })
-            };
-        }
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Our controller then becomes a lot less verbose. &lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreController.cs
-    [HttpGet(&amp;quot;{storeId}&amp;quot;)]
-    public async Task&amp;lt;IActionResult&amp;gt; GetStore([FromRoute] string storeId)
-    {
-        var result = await _dbContext.Set&amp;lt;Store&amp;gt;.FindAsync(storeId);
-        var storeResource = result.ToResource();
-        return new OkObjectResult(storeResource);
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;This is better and our codebase is now much more maintainable because we centralized our mapping and there&apos;s no more copy and paste involved
-to map our Store objects to a StoreResource object. &lt;/p&gt;
-&lt;h1&gt;Using AutoMapper&lt;/h1&gt;
-&lt;p&gt;If our application has many entities, it can be beneficial to automate the mapping from Store to StoreResource. We can do this by
-using the library AutoMapper.&lt;/p&gt;
-&lt;p&gt;AutoMapper is a library that allows us to map an object from one object type to another. AutoMapper does this by trying to map properties
-with the same name on the source object and the target object.&lt;/p&gt;
-&lt;p&gt;We start by adding the following Nuget to our .csproj file&lt;/p&gt;
-&lt;deckgo-highlight-code xml  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;//NameOfProject.cs
-    &amp;lt;ItemGroup&amp;gt;
-        &amp;lt;PackageReference Include=&amp;quot;AutoMapper.Extensions.Microsoft.DependencyInjection&amp;quot; Version=&amp;quot;8.1.1&amp;quot; /&amp;gt;
-    &amp;lt;/ItemGroup&amp;gt;        &lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Then we add an AutoMapper Profile class to our project which defines the mapping &lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreProfile.cs
-    public class StoreProfile : AutoMapper.Profile
-    {
-        public StoreProfile()
-        {
-            CreateMap&amp;lt;Print, PrintResource&amp;gt;();
-            CreateMap&amp;lt;Store, StoreResource&amp;gt;();
-        }
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Then in our Startup class, we need to add AutoMapper to our IoC container&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// Startup.cs
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddAutoMapper(typeof(StoreProfile));
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;Finally in our controller, we inject an IMapper instance and modify our Get Method for it to use AutoMapper.&lt;/p&gt;
-&lt;deckgo-highlight-code csharp  terminal=&quot;none&quot;  highlight-lines=&quot;&quot;&gt;
-          &lt;code slot=&quot;code&quot;&gt;// StoreController.cs
-    private readonly StoreDbContext _dbContext;
-    private readonly IMapper _mapper;
-    
-    public StoreController(IMapper mapper, StoreDbContext dbContext)
-    {
-        _dbContext = dbContext;
-        _mapper = mapper;
-    }
-
-    [HttpGet(&amp;quot;{storeId}&amp;quot;)]
-    public async Task&amp;lt;IActionResult&amp;gt; GetStore([FromRoute] string storeId)
-    {
-        var result = await _dbContext.Set&amp;lt;Store&amp;gt;().Include(x =&amp;gt; x.Prints).FirstAsync(x =&amp;gt; x.Id == storeId);
-        var storeResource = _mapper.Map&amp;lt;StoreResource&amp;gt;(result);
-        return new OkObjectResult(storeResource);
-    }&lt;/code&gt;
-        &lt;/deckgo-highlight-code&gt;
-&lt;p&gt;There we have it, a different solution to the object cycle detected problem which I believe is very maintainable and easy
-to use.&lt;/p&gt;
-&lt;p&gt;If you have further questions, feel free to ask them here: &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cycling Mindset, First Imperial Century, Montreal to Quebec on a bicycle]]></title><description><![CDATA[I recently went from Montreal to Quebec in one day on my bike, it took me 12 hours total and also 10 hours of cycling to get there . Before…]]></description><link>https://jeanarjean.com/blog/2021-08-28-cycling-mindset/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-08-28-cycling-mindset/</guid><pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently went from Montreal to Quebec in one day on my bike, it took me 12 hours total and also 10 hours of cycling to get there . Before this the longest distance I had a run in one day was 120km, so jumping to 270 km seemed like a big step but I was determined to see it through. &lt;/p&gt;
+&lt;p&gt;If you have further questions, feel free to ask them here: &lt;a href=&quot;mailto:arguinjr@gmail.com?subject=Object%20Cycle%20Detected&quot;&gt;arguinjr@gmail.com&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Cycling Mindset, First Imperial Century, Montreal to Quebec on a bicycle]]></title><description><![CDATA[I recently went from Montreal to Quebec in one day on my bike, it took me 12 hours total and also 10 hours of cycling to get there . Before…]]></description><link>https://jeanarjean.com/blog/2021-08-28-cycling-mindset/</link><guid isPermaLink="false">https://jeanarjean.com/blog/2021-08-28-cycling-mindset/</guid><pubDate>Sun, 29 Aug 2021 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently went from Montreal to Quebec in one day on my bike, it took me 12 hours total and also 10 hours of cycling to get there . Before this the longest distance I had a run in one day was 120km, so jumping to 270 km seemed like a big step but I was determined to see it through. &lt;/p&gt;
 &lt;p&gt;I didn&apos;t expect my pace to be this fast to be honest, to be fair I was greatly helped by the wind, but even the day after, while cycling to my parent&apos;s home with the wind in my face, my pace was a lot better than I expected. When I cycled my first solo metric century (100km), I kept myself from exerting too much my muscles. So I was mostly resting most of  the way. I thought during a 270km ride, I&apos;d have to be in resting pace much of the way, but turns out I was able to push into my muscles a lot through the whole ride which I didn&apos;t expect myself to be able to do.
 It seems cycling progress doesn&apos;t happen only when your muscles are getting stronger but also when you learn how much more you can push
 yourself, when you break what you previously thought were your limit. This probably applies a lot more to beginner, but I find this kind
