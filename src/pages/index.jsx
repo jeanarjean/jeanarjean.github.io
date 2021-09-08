@@ -32,8 +32,8 @@ class WebsiteHome extends React.Component {
               <SmallCard
                 name="2021"
                 link="/projects/photography/2021"
-                image="projects/photography/2021/2021-1.jpg"
-                alt="projects/photography/2021/2021-1.jpg"
+                image="/projects/photography/2021/2021-1.jpg"
+                alt="/projects/photography/2021/2021-1.jpg"
                 className="latest-photography-card"
               >
                 {' '}

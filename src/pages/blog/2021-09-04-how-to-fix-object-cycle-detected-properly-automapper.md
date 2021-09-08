@@ -206,4 +206,4 @@ Finally in our controller, we inject an IMapper instance and modify our Get Meth
 There we have it, a different solution to the object cycle detected problem which I believe is very maintainable and easy
 to use.
 
-If you have further questions, feel free to ask them here: [arguinjr@gmail.com](mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp)
+If you have further questions, feel free to ask them here: [arguinjr@gmail.com](mailto:arguinjr@gmail.com?subject=Object%20Cycle%20Detected)
