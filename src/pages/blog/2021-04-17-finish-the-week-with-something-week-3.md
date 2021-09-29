@@ -3,12 +3,15 @@ title: Finish the Week with Something - Week 3
 date: '2021-04-14T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["weekly", "life", "javascript", " opensource"]
+tags: ['weekly', 'life', 'javascript', ' opensource']
 ---
+
 # Summary
-This week, I've worked on my personal website, I released new prints that people can purchase. I also added added analytics to my website which made it easy for me to track how many people visited 
+
+This week, I've worked on my personal website, I released new prints that people can purchase. I also added added analytics to my website which made it easy for me to track how many people visited
 
 # Prints
+
 I've decided to manage the state of the cart manually using Redux, it was pretty easy to setup. I had to
 use a cart as initially the website only let you purchase one print a time which didn't require any
 state management. I integrate with Stripe, storing products ids in .env file. It's a lot of manual
@@ -16,9 +19,11 @@ work to setup a new print as I have to manually add the product ids in the .env 
 for the different sizes of prints.
 
 # Analytics
-For analytics, I used panelbear, it was surprisingly easy to setup. 
 
-*Setting up panelbear in a Gatsby website*
+For analytics, I used panelbear, it was surprisingly easy to setup.
+
+_Setting up panelbear in a Gatsby website_
+
 ```javascript
 // gatsby-ssr.js
 

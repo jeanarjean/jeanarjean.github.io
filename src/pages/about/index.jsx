@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../../components/Footer'
-import Layout from '../../components/layout'
+import Footer from '../../components'
+import Layout from '../../components'
 import './about.scss'
 
 class BlogIndex extends React.Component {

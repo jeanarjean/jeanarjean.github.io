@@ -1,6 +1,5 @@
 import React from 'react'
-import Card from '../../../components/Card'
-import Layout from '../../../components/layout'
+import {Card, Layout} from '../../../components/'
 import './photography.scss'
 
 class BlogIndex extends React.Component {

@@ -1,2 +1,3 @@
-import storeWrapper from "./storeWrapper"
+import storeWrapper from './storeWrapper'
+
 export const wrapRootElement = storeWrapper

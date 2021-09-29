@@ -3,9 +3,10 @@ title: How to Validate your AutoMapper Configuration using Unit Test
 date: '2021-09-07T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["csharp", "csproj", "xunit", "autofac"]
+tags: ['csharp', 'csproj', 'xunit', 'autofac']
 ---
-*Disclaimer: this article is written using XUnit but could be done using any test framework.*
+
+_Disclaimer: this article is written using XUnit but could be done using any test framework._
 
 The simplest way to test your AutoMapper configuration is to write a test and create a MappingConfiguration in the test that you're going to validate.
 
@@ -19,7 +20,7 @@ namespace UnitTest
     public class MapperTestManual
     {
         private readonly MapperConfiguration _mapperConfiguration;
-        
+
         public MapperTestManual()
         {
             _mapperConfiguration = new MapperConfiguration(cfg =>
@@ -28,7 +29,7 @@ namespace UnitTest
 
             });
         }
-            
+
         [Fact]
         public void ValidateAutoMapperConfiguration()
         {
@@ -46,11 +47,15 @@ Depending on if you're using AutoFac or the default Microsoft IoC container, the
 you both alternatives in this article.
 
 # Using Microsoft IoC Container
-Note that this requires the use of the package: 
+
+Note that this requires the use of the package:
+
 ```xml
 <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
 ```
+
 Given a Startup class that has a ConfigureServices method that looks like this:
+
 ```csharp
         public void ConfigureServices(IServiceCollection services)
         {
@@ -59,6 +64,7 @@ Given a Startup class that has a ConfigureServices method that looks like this:
 ```
 
 Our test class should look like this.
+
 ```csharp
 using Api;
 using AutoMapper;
@@ -70,7 +76,7 @@ namespace UnitTest
     public class MapperTestServiceCollection
     {
         private readonly IConfigurationProvider _mapperConfiguration;
-        
+
         public MapperTestServiceCollection()
         {
             var services = new ServiceCollection();
@@ -80,7 +86,7 @@ namespace UnitTest
             var mapper = container.GetService<IMapper>();
             _mapperConfiguration = mapper.ConfigurationProvider;
         }
-            
+
         [Fact]
         public void ValidateAutoMapperConfiguration()
         {
@@ -90,13 +96,16 @@ namespace UnitTest
 }
 ```
 
-
 # Using Autofac
+
 Note that this requires to add the dependency AutoMapper.Contrib.Autofac.DependencyInjection.
+
 ```xml
 <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="5.4.0" />
 ```
+
 Given an AutoFac Module looking like this:
+
 ```csharp
 // ApiModule.cs
 using Autofac;
@@ -115,6 +124,7 @@ namespace Api
 ```
 
 Our test to validate our configuration will look like this.
+
 ```csharp
 //MapperTest.cs
 using Api;
@@ -127,7 +137,7 @@ namespace UnitTest
     public class MapperTestAutoFac
     {
         private readonly MapperConfiguration _mapperConfiguration;
-        
+
         public MapperTestAutoFac()
         {
             var builder = new ContainerBuilder();
@@ -136,7 +146,7 @@ namespace UnitTest
 
             _mapperConfiguration = container.Resolve<MapperConfiguration>();
         }
-            
+
         [Fact]
         public void ValidateAutoMapperConfiguration()
         {
@@ -145,8 +155,5 @@ namespace UnitTest
     }
 }
 ```
-
-
-
 
 If you have further questions, feel free to ask them here: [arguinjr@gmail.com](mailto:arguinjr@gmail.com?subject=Validate%20AutoMapper%20Configuration)

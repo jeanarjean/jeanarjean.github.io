@@ -1,29 +1,29 @@
 .home-container {
-  overflow: auto;
+    overflow: auto;
 }
 
 .home-content {
-  margin: auto;
-  width: 40%;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 2.5rem;    /* Footer height */
+    margin: auto;
+    width: 40%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 2.5rem; /* Footer height */
 }
 
 @media screen and (max-width: 1400px) {
-  .home-content {
-    width: 60%;
-  }
+    .home-content {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-  .home-content {
-    width: 80%;
-  }
+    .home-content {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .home-content {
-    width: 94%;
-  }
+    .home-content {
+        width: 94%;
+    }
 }

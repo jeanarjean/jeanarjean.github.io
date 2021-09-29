@@ -4,8 +4,9 @@ date: '2020-06-06T24:00:00.000Z'
 image: './resources/peace.jpg'
 song: 'oogway - two years'
 backgroundColor: 'black'
-tags: ["life"]
+tags: ['life']
 ---
+
 I recently started developing wrist issues, my livelihood was pretty much on the line, if you spend 8 hours a day writing code, you
 can't afford to hurt yourself, you gotta fix your wrist or find another profession. After a life spent on education that ended up with me as a software developer, that wasn't
 really an option.
@@ -15,10 +16,10 @@ that really shouldn't happen to a 24 years old. I have a long lasting injury in 
 I haven't taken the right amount of time to fix either. I've been negligent towards myself.
 
 I decided to take actions, I had to give myself a chance, I knew I had to start doing more physical exercices. I took a small detour however
-and decided to read *What I talk about when I talk about running*[^1] by *Haruki Murakami* which I ended up enjoying
+and decided to read _What I talk about when I talk about running_[^1] by _Haruki Murakami_ which I ended up enjoying
 a lot, it was a calm book by a man with much more life behind him than me, it was interesting to see similar questionings from someone considerably
 older. Someone much older who is according to himself living the life he wants to live. I ended up really appreciating his philosophy of life, of running by necessity to keep himself healthy enough to continue
-writing, which is what he has decided is life is about. 
+writing, which is what he has decided is life is about.
 
 So, I started running, I run at least 5km almost every day, sometimes pushing for more. Since I've recently started running, I take a day or two off when
 I need it in order to give my legs a chance to rest and recover. Rest usually makes a huge difference when I start running again, my legs are much more sturdy
@@ -38,7 +39,7 @@ So I dropped coffee altogheter, it was a huge pain for the first few days, heada
 I can do deep work again, and I only need a run in the morning to feel awake. I am no longer dependant to coffee. It's been three weeks now, I'm very very happy about the decision,
 I am much healthier and the decision has already paid off in my opinion, but I'm sure it will be even more important for my health as/if I get older.
 
-I'd say, the truest thing about all this dropping caffeine thing is that I don't feel much different, if anything it made me deadly bored, unexcited, don't get me wrong, I don't regret the decision, it brought me back to reality. 
+I'd say, the truest thing about all this dropping caffeine thing is that I don't feel much different, if anything it made me deadly bored, unexcited, don't get me wrong, I don't regret the decision, it brought me back to reality.
 Lack of stimulants have brought me back to a peaceful life, a boring one, one which might be the envy of many, yet being in it feels horrible. Life has lost its lust, it is plain, there is nothing to be excited about.
 Getting rid of stimulants made me realize that maybe the life I'm living right now is due for major changes, that right now I am not very very happy, that it is in my power to make it happier and this is actually
 something I'm excited about.

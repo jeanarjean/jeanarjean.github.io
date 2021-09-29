@@ -1,5 +1,6 @@
 # Python Install
-Why do you need python 
+
+Why do you need python
 
 Please use Python 3 as Conan has deprecated Python 2 as of 01-01-2020
 
@@ -14,8 +15,5 @@ py -m pip install conan
 ```
 
 Add to path -> make a seperate tut
-
-
-
 
 # Visual Studio Setup

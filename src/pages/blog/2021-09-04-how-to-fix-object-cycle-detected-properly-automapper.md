@@ -3,7 +3,7 @@ title: How to Fix "A possible object cycle was detected" properly in your .Net p
 date: '2021-09-04T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["csharp", "csproj"]
+tags: ['csharp', 'csproj']
 ---
 
 This issue has already been pretty well discussed [here](https://khalidabuhakmeh.com/ef-core-and-aspnet-core-cycle-issue-and-solution). However, I think this solution could be made easier to maintain at the cost of adding an additional dependency to your project.
@@ -47,12 +47,13 @@ Given a project containing the following entities:
 ```
 
 This would result in an exception being thrown while trying to serialize the object, "System.Text.Json.JsonException: A possible object cycle was detected" if the store has any product
- as there's an endless relationship cycle between a Store and a Product.
+as there's an endless relationship cycle between a Store and a Product.
 
- We can solve this by mapping our Product and Store entities to Resource objects, using resource objects, we can dictate
- what the users of our API will see when they query it instead of having to adapt our Database Entity to work with our API.
+We can solve this by mapping our Product and Store entities to Resource objects, using resource objects, we can dictate
+what the users of our API will see when they query it instead of having to adapt our Database Entity to work with our API.
 
- Our resources could look like this.
+Our resources could look like this.
+
 ```csharp
 // ProductResource.cs
     public class ProductResource
@@ -99,7 +100,7 @@ And our controller would look like this
 ```
 
 The problem is solved and we no longer have the error we started with, however this isn't very portable, we'd have to copy and paste this
-code in all our controllers that return a store which would be pretty messy, verbose and error prone. Furthermore, when we'd start adding 
+code in all our controllers that return a store which would be pretty messy, verbose and error prone. Furthermore, when we'd start adding
 additional properties to our store, we'd have to think about every controller where this logic is in place and go change it manually.
 
 A simple solution is to maintain an extension class for our store which we can reuse anywhere in our codebase.
@@ -125,7 +126,7 @@ A simple solution is to maintain an extension class for our store which we can r
     }
 ```
 
-Our controller then becomes a lot less verbose. 
+Our controller then becomes a lot less verbose.
 
 ```csharp
 // StoreController.cs
@@ -139,7 +140,7 @@ Our controller then becomes a lot less verbose.
 ```
 
 This is better and our codebase is now much more maintainable because we centralized our mapping and there's no more copy and paste involved
-to map our Store objects to a StoreResource object. 
+to map our Store objects to a StoreResource object.
 
 # Using AutoMapper
 
@@ -150,14 +151,15 @@ AutoMapper is a library that allows us to map an object from one object type to 
 with the same name on the source object and the target object.
 
 We start by adding the following Nuget to our .csproj file
-``` xml
+
+```xml
 //NameOfProject.cs
     <ItemGroup>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    </ItemGroup>        
+    </ItemGroup>
 ```
 
-Then we add an AutoMapper Profile class to our project which defines the mapping 
+Then we add an AutoMapper Profile class to our project which defines the mapping
 
 ```csharp
 // StoreProfile.cs
@@ -172,7 +174,7 @@ Then we add an AutoMapper Profile class to our project which defines the mapping
 ```
 
 Then in our Startup class, we need to add AutoMapper to our IoC container
-  
+
 ```csharp
 // Startup.cs
     public void ConfigureServices(IServiceCollection services)
@@ -187,7 +189,7 @@ Finally in our controller, we inject an IMapper instance and modify our Get Meth
 // StoreController.cs
     private readonly StoreDbContext _dbContext;
     private readonly IMapper _mapper;
-    
+
     public StoreController(IMapper mapper, StoreDbContext dbContext)
     {
         _dbContext = dbContext;

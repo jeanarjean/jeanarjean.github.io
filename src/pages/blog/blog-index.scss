@@ -1,24 +1,24 @@
 .index-content {
-  margin: auto;
-  width: 40%;
-  padding-left: 1vw;
-  padding-right: 1vw;
+    margin: auto;
+    width: 40%;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 @media screen and (max-width: 1400px) {
-  .index-content {
-    width: 60%;
-  }
+    .index-content {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-  .index-content {
-    width: 80%;
-  }
+    .index-content {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .index-content {
-    width: 98%;
-  }
+    .index-content {
+        width: 98%;
+    }
 }

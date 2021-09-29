@@ -3,11 +3,11 @@ title: How to Use 'Extern Alias' to differentiate assemblies that use the same n
 date: '2021-03-10T24:00:00.000Z'
 song: 'oogway - two years'
 backgroundColor: 'white'
-tags: ["csharp", "csproj", "msbuild"]
+tags: ['csharp', 'csproj', 'msbuild']
 ---
+
 If your project contains two assemblies with identical classes and namespaces, you won't be able to differentiate between them unless you use extern aliases. In order to use extern aliases, you first need to open the .csproj file of your project and modify the PackageReference or ProjectReference by adding the \<Aliases\> attribute.  
 If you're referencing another project in your solution, your .csproj should look like this:
-			 		 
 
 ```xml
 // Project.csproj
@@ -39,7 +39,8 @@ using global::whatevernamespace.youwant
 ```
 
 You could also use two custom namespaces to differentiate the assemblies.  
-*ProjectName.csproj*
+_ProjectName.csproj_
+
 ```xml
 // Project.csproj
 <ProjectReference Include="..\Example.Project1\Example.Project1.csproj">
@@ -58,4 +59,5 @@ extern alias CustomNamespace2
 using CustomNamespace1::whatevernamespace.youwant
 using CustomNamespace2::whatevernamespace.youwant
 ```
+
 If you have further questions, feel free to ask them here: [arguinjr@gmail.com](mailto:arguinjr@gmail.com?subject=Extern%20Alias%20CSharp)

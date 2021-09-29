@@ -1,8 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout';
-import Cart from './cart';
+import {Cart, StoreItem} from '../../components/store';
 import './index.scss';
-import StoreItem from './storeItem';
 
 class StoreHome extends React.Component {
   render() {

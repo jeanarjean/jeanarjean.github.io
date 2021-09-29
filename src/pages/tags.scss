@@ -1,25 +1,25 @@
 .tags-container {
-  margin: auto;
-  width: 40%;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 2.5rem; /* Footer height */
+    margin: auto;
+    width: 40%;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 2.5rem; /* Footer height */
 }
 
 @media screen and (max-width: 1400px) {
-  .tags-container {
-    width: 60%;
-  }
+    .tags-container {
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-  .tags-container {
-    width: 80%;
-  }
+    .tags-container {
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 600px) {
-  .tags-container {
-    width: 94%;
-  }
+    .tags-container {
+        width: 94%;
+    }
 }

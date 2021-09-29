@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
-import SmallCard from '../components/SmallCard'
+import SmallCard from '../components/homepage/SmallCard'
 import Layout from '../components/layout'
-import Newsletter from '../components/Newsletter'
+import Newsletter from '../components/homepage/Newsletter'
 import './index.scss'
 
 class WebsiteHome extends React.Component {

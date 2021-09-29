@@ -1,5 +1,5 @@
 import React from 'react'
-import PhotographyProject from '../../../components/PhotographyProject'
+import {PhotographyProject} from '../../../components/'
 
 class PhotoAlbum2021 extends React.Component {
   render() {

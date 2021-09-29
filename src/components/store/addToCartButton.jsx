@@ -28,7 +28,6 @@ const mapStateToProps = ({}, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return { addToCart: (item, size) => {
-    debugger;
     var itemToSend = {...item, itemId: item.itemIds[size], price: prices[size]}
     return dispatch({ type: `ADD_TO_CART`, item: itemToSend, size: sizes[size] }) 
   }}
