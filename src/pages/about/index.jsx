@@ -1,6 +1,5 @@
 import React from 'react'
-import Footer from '../../components'
-import Layout from '../../components'
+import { Footer, Layout } from '../../components'
 import './about.scss'
 
 class BlogIndex extends React.Component {
@@ -12,20 +11,22 @@ class BlogIndex extends React.Component {
             <h1>About:</h1>
             <p>
               {' '}
-              Passionate about all aspects of programming and video games.
-            {' '}
+              Passionate about all aspects of programming, video games AND
+              CYCLING.{' '}
             </p>
             <h2>Current Interests:</h2>
             Programming
-          <br />
+            <br />
             Reading
-          <br />
+            <br />
+            Cycling
+            <br />
             <br />
             <p>
               If you want to contact me, feel free to send an email at{' '}
-              <a href="mailto:rorscharg@gmail.com">rorscharg@gmail.com</a>.
-              I'll be super happy to answer and have a conversation with you!
-          </p>
+              <a href="mailto:arguinjr@gmail.com">arguinjr@gmail.com</a>. I'll
+              be super happy to answer and have a conversation with you!
+            </p>
           </div>
           <Footer />
         </div>

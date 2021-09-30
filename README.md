@@ -7,3 +7,5 @@ Master is the compiled webpage, go on the develop branch to look at the source c
 You can visit the website [here](https://jeanarjean.com).
 
 Template used is available [here](https://github.com/gatsbyjs/gatsby-starter-blog).
+
+**Development happens on branch develop**

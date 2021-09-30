@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import './Header.scss'
 
-class Header extends Component {
+export class Header extends Component {
   constructor(props) {
     super(props)
     this.toggle = this.toggle.bind(this)
     this.state = {
       isOpen: false,
-      windowWidth: 1026,
+      windowWidth: 1026
     }
   }
 
@@ -23,14 +23,14 @@ class Header extends Component {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize.bind(this))
-        this.setState = (state,callback)=>{
-        return;
-    };
+    this.setState = (state, callback) => {
+      return
+    }
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !this.state.isOpen
     })
   }
 
@@ -124,5 +124,3 @@ function MenuItem(props) {
     </div>
   )
 }
-
-export default Header

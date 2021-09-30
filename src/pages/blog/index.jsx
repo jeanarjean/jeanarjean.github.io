@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
-import Layout from '../../components/layout'
+import { Layout } from '../../components'
 import './blog-index.scss'
 
 class BlogIndex extends React.Component {

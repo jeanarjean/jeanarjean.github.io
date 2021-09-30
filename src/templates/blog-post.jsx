@@ -2,7 +2,7 @@ import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
+import { Layout } from '../components'
 import './blog-post.scss'
 
 class BlogPostTemplate extends React.Component {
@@ -28,14 +28,14 @@ class BlogPostTemplate extends React.Component {
             <h1 className="post-title">{post.frontmatter.title}</h1>
             <p
               style={{
-                display: 'block',
+                display: 'block'
               }}
             >
               {post.frontmatter.date}
             </p>
-            <div style={{height: '10px'}}></div>
+            <div style={{ height: '10px' }}></div>
             <Tags tags={tags} />
-            <div style={{height: '10px'}}></div>
+            <div style={{ height: '10px' }}></div>
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
             <hr />
 
@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
                 flexWrap: 'wrap',
                 justifyContent: 'space-between',
                 listStyle: 'none',
-                padding: 0,
+                padding: 0
               }}
             >
               {previous && (
@@ -72,16 +72,17 @@ class BlogPostTemplate extends React.Component {
 }
 
 function Tags(props) {
-  var colors = ['#242424', '#c21025', '#c21025'];
-  var currentColorIndex = -1;
+  var colors = ['#242424', '#c21025', '#c21025']
+  var currentColorIndex = -1
 
   return (
     <div>
-      {props.tags.map(function (tag) {
-        currentColorIndex = (currentColorIndex + 1) % 3;
+      {props.tags.map(function(tag) {
+        currentColorIndex = (currentColorIndex + 1) % 3
         return (
           <span key={tag}>
-            <Link to={"/tags/" + tag.replace(" ", "-")}
+            <Link
+              to={'/tags/' + tag.replace(' ', '-')}
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 padding: '10px',
@@ -90,12 +91,15 @@ function Tags(props) {
                 color: '#f8eeee',
                 fontWeight: '550'
               }}
-            >{tag}</Link>
-            <span style={{
-              display: 'inline-block',
-              width: '6px'
-            }}>
-            </span>
+            >
+              {tag}
+            </Link>
+            <span
+              style={{
+                display: 'inline-block',
+                width: '6px'
+              }}
+            ></span>
           </span>
         )
       })}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {PhotographyProject} from '../../../components/'
+import { PhotographyProject } from '../../../components/'
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
       '/projects/photography/2017_summer_montreal/smoke.jpg',
       '/projects/photography/2017_summer_montreal/gees.jpg',
       '/projects/photography/2017_summer_montreal/watchmen.jpg',
-      '/projects/photography/2017_summer_montreal/whoami.jpg',
+      '/projects/photography/2017_summer_montreal/whoami.jpg'
     ]
 
     return (

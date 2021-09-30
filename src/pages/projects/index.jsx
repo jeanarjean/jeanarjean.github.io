@@ -1,6 +1,6 @@
 import React from 'react'
 import get from 'lodash/get'
-import {Card, Layout} from '../../components/'
+import { Card, Layout } from '../../components/'
 import './Projects.scss'
 
 class BlogIndex extends React.Component {

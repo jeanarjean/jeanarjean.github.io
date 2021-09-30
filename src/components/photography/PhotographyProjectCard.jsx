@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Layout from '../layout'
-import './PhotographyProject.scss'
+import { Layout } from '../../components'
 
-class PhotographyProjectCard extends Component {
+export class PhotographyProject extends Component {
   render() {
     return (
       <Layout>
@@ -35,5 +34,3 @@ const imageStyle = {
   maxWidth: '80vw',
   maxHeight: '100vh'
 }
-
-export default PhotographyProjectCard

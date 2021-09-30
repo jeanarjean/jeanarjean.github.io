@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../../components/layout'
+import { Layout } from '../../components'
 import './success.scss'
 
-const Success = () => (
+export const Success = () => (
   <Layout>
     <div className="success-container">
       <h1>Purchase Successful</h1>
@@ -15,6 +15,3 @@ const Success = () => (
     </div>
   </Layout>
 )
-
-export default Success
-

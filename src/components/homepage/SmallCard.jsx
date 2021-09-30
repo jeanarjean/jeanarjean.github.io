@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import './SmallCard.scss'
 
-class SmallCard extends Component {
+export class SmallCard extends Component {
   render() {
     return (
       <div className="small-card">
@@ -22,5 +22,3 @@ class SmallCard extends Component {
     )
   }
 }
-
-export default SmallCard

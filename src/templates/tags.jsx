@@ -1,17 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Layout from '../components/layout'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Layout } from '../components/'
 import './tags.scss'
 
 // Components
 
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-    } tagged with "${tag}"`
+    totalCount === 1 ? '' : 's'
+  } tagged with "${tag}"`
   return (
     <Layout>
       <div className="tags-container">
@@ -22,9 +22,7 @@ const Tags = ({ pageContext, data }) => {
             return (
               <div>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  <h3>
-                    {title}
-                  </h3>
+                  <h3>{title}</h3>
                 </Link>
                 <small>{node.frontmatter.date}</small>
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
@@ -38,12 +36,12 @@ const Tags = ({ pageContext, data }) => {
             */}
         <Link to="/tags">All tags</Link>
       </div>
-    </Layout >
+    </Layout>
   )
 }
 Tags.propTypes = {
   pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired
   }),
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -52,20 +50,19 @@ Tags.propTypes = {
         PropTypes.shape({
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
+              title: PropTypes.string.isRequired
             }),
             frontmatter: PropTypes.shape({
-              date: PropTypes.string.isRequired,
-
+              date: PropTypes.string.isRequired
             }),
             fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
+              slug: PropTypes.string.isRequired
+            })
+          })
         }).isRequired
-      ),
-    }),
-  }),
+      )
+    })
+  })
 }
 export default Tags
 export const pageQuery = graphql`
