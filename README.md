@@ -1,8 +1,9 @@
-# Rorscharg's personal website
+# jeanarjean's personal website
+Static website made using Gatsby and hosted using github pages.
+Master is the compiled webpage, go on the develop branch to look at the source code.
 
-Static website made using [Gatsby](https://www.gatsbyjs.org/)
-and hosted using github pages.
+You can visit the website here.
 
-You can visit the webiste [here](http://rorscharg.com).
+Template used is available here.
 
-Template used it available [here](https://github.com/gatsbyjs/gatsby-starter-blog).
+**Development happens on branch Development**
