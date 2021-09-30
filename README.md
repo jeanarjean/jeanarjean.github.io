@@ -6,4 +6,4 @@ You can visit the website here.
 
 Template used is available here.
 
-**Development happens on branch Development**
+**Development happens on branch develop**
