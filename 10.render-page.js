@@ -1,27 +1,27 @@
+"use strict";
+exports.id = 10;
 exports.ids = [10];
 exports.modules = {
 
-/***/ "./node_modules/@deckdeckgo/highlight-code/dist/esm/lucario-59b2ad39.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/@deckdeckgo/highlight-code/dist/esm/lucario-59b2ad39.js ***!
-  \******************************************************************************/
-/*! exports provided: theme */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 5010:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "theme", function() { return theme; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "theme": () => (/* binding */ theme)
+/* harmony export */ });
 const theme = `{
-  --deckgo-highlight-code-carbon-background: #2b3e50;
-  --deckgo-highlight-code-carbon-color: rgb(248, 248, 242);
-  --deckgo-highlight-code-token-atrule: #ff6541;
-  --deckgo-highlight-code-token-comment: #5c98cd;
-  --deckgo-highlight-code-token-function: #f8f8f2;
-  --deckgo-highlight-code-token-operator: #66d9ef;
-  --deckgo-highlight-code-token-property: #f8f8f2;
-  --deckgo-highlight-code-token-punctuation: rgb(248, 248, 242);
-  --deckgo-highlight-code-token-regex: #e6db74;
-  --deckgo-highlight-code-token-selector: #ff6541;
+  --deckgo-highlight-code-carbon-background: #263238;
+  --deckgo-highlight-code-carbon-color: rgb(233, 237, 237);
+  --deckgo-highlight-code-token-atrule: rgba(199, 146, 234);
+  --deckgo-highlight-code-token-comment: #546e7a;
+  --deckgo-highlight-code-token-comment-rgb: 84, 110, 122;
+  --deckgo-highlight-code-token-function: #82b1ff;
+  --deckgo-highlight-code-token-operator: rgb(233, 237, 237);
+  --deckgo-highlight-code-token-property: #80cbae;
+  --deckgo-highlight-code-token-punctuation: rgb(233, 237, 237);
+  --deckgo-highlight-code-token-regex: #c3e88d;
+  --deckgo-highlight-code-token-selector: #ff5370;
 }`;
 
 
@@ -29,5 +29,6 @@ const theme = `{
 
 /***/ })
 
-};;
+};
+;
 //# sourceMappingURL=10.render-page.js.map

@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-tags-jsx","path":"/tags/msbuild/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"If your project contains two assemblies with identical classes and namespaces, you won't be able to differentiate between them unless you…","fields":{"slug":"/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/"},"frontmatter":{"title":"How to Use 'Extern Alias' to differentiate assemblies that use the same namespace in C#","date":"11 March, 2021"}}}]}},"pageContext":{"tag":"msbuild"}},"staticQueryHashes":["3868140423"]}
+{
+    "componentChunkName": "component---src-templates-tags-jsx",
+    "path": "/tags/msbuild/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"If your project contains two assemblies with identical classes and namespaces, you won't be able to differentiate between them unless you…","fields":{"slug":"/blog/2021-03-10-how-to-create-alias-property-in-your-csproj/"},"frontmatter":{"title":"How to Use 'Extern Alias' to differentiate assemblies that use the same namespace in C#","date":"11 March, 2021"}}}]}},"pageContext":{"tag":"msbuild"}},
+    "staticQueryHashes": ["3868140423"]}

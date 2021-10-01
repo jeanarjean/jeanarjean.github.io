@@ -1,27 +1,27 @@
+"use strict";
+exports.id = 15;
 exports.ids = [15];
 exports.modules = {
 
-/***/ "./node_modules/@deckdeckgo/highlight-code/dist/esm/oceanic-next-e3f20f17.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/@deckdeckgo/highlight-code/dist/esm/oceanic-next-e3f20f17.js ***!
-  \***********************************************************************************/
-/*! exports provided: theme */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ 2015:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "theme", function() { return theme; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "theme": () => (/* binding */ theme)
+/* harmony export */ });
 const theme = `{
-  --deckgo-highlight-code-carbon-background: #304148;
-  --deckgo-highlight-code-carbon-color: #f8f8f2;
-  --deckgo-highlight-code-token-atrule: #c594c5;
-  --deckgo-highlight-code-token-comment: #65737e;
-  --deckgo-highlight-code-token-function: #69c;
-  --deckgo-highlight-code-token-operator: #fff;
-  --deckgo-highlight-code-token-property: #99c794;
-  --deckgo-highlight-code-token-punctuation: #f8f8f2;
-  --deckgo-highlight-code-token-regex: #99c794;
-  --deckgo-highlight-code-token-selector: #c594c5;
+  --deckgo-highlight-code-carbon-background: #f5f5f5;
+  --deckgo-highlight-code-carbon-color: #202020;
+  --deckgo-highlight-code-token-atrule: #ac4142;
+  --deckgo-highlight-code-token-comment: #8f5536;
+  --deckgo-highlight-code-token-comment-rgb: 143, 85, 54;
+  --deckgo-highlight-code-token-function: #90a959;
+  --deckgo-highlight-code-token-operator: #202020;
+  --deckgo-highlight-code-token-property: #90a959;
+  --deckgo-highlight-code-token-punctuation: #202020;
+  --deckgo-highlight-code-token-regex: #f4bf75;
+  --deckgo-highlight-code-token-selector: #ac4142;
 }`;
 
 
@@ -29,5 +29,6 @@ const theme = `{
 
 /***/ })
 
-};;
+};
+;
 //# sourceMappingURL=15.render-page.js.map

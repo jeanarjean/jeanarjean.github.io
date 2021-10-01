@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-templates-tags-jsx","path":"/tags/autofac/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"Disclaimer: this article is written using XUnit but could be done using any test framework. The simplest way to test your AutoMapper…","fields":{"slug":"/blog/2021-09-07-how-to-validate-automapper-configuration-using-unit-test/"},"frontmatter":{"title":"How to Validate your AutoMapper Configuration using Unit Test","date":"08 September, 2021"}}}]}},"pageContext":{"tag":"autofac"}},"staticQueryHashes":["3868140423"]}
+{
+    "componentChunkName": "component---src-templates-tags-jsx",
+    "path": "/tags/autofac/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"Disclaimer: this article is written using XUnit but could be done using any test framework. The simplest way to test your AutoMapper…","fields":{"slug":"/blog/2021-09-07-how-to-validate-automapper-configuration-using-unit-test/"},"frontmatter":{"title":"How to Validate your AutoMapper Configuration using Unit Test","date":"08 September, 2021"}}}]}},"pageContext":{"tag":"autofac"}},
+    "staticQueryHashes": ["3868140423"]}
