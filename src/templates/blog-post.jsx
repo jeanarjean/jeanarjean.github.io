@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const backgroundColor = post?.frontmatter?.backgroundColor
     const tags = post?.frontmatter?.tags
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
-    const { previous, next } = this.props.pathContext
+    const { previous, next } = this.props.pageContext
 
     return (
       <Layout>
