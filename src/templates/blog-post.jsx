@@ -8,9 +8,9 @@ import './blog-post.scss'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const image = post.frontmatter.image?.childImageSharp.fluid.src
-    const backgroundColor = post.frontmatter.backgroundColor
-    const tags = post.frontmatter.tags
+    const image = post.frontmatter?.image?.childImageSharp.fluid.src
+    const backgroundColor = post?.frontmatter?.backgroundColor
+    const tags = post?.frontmatter?.tags
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
 
@@ -26,13 +26,15 @@ class BlogPostTemplate extends React.Component {
           <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
           <div className="post-content">
             <h1 className="post-title">{post.frontmatter.title}</h1>
-            <p
-              style={{
-                display: 'block'
-              }}
-            >
-              {post.frontmatter.date}
-            </p>
+            {post.frontmatter?.date && (
+              <p
+                style={{
+                  display: 'block'
+                }}
+              >
+                {post.frontmatter?.date}
+              </p>
+            )}
             <div style={{ height: '10px' }}></div>
             <Tags tags={tags} />
             <div style={{ height: '10px' }}></div>
@@ -72,7 +74,6 @@ class BlogPostTemplate extends React.Component {
 }
 
 function Tags(props) {
-  var colors = ['#242424', '#c21025', '#c21025']
   var currentColorIndex = -1
 
   return (
