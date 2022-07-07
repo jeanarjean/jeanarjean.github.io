@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-tags-jsx",
-    "path": "/tags/liveview/",
-    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"excerpt":"Disclaimer: this article is written using XUnit but could be done using any test framework. The simplest way to test your AutoMapper…","fields":{"slug":"/blog/2022-06-18-liveview-table-with-select-filter/"},"frontmatter":{"title":"How to create Phoenix LiveView tables with search filter","date":"18 June, 2022"}}},{"node":{"excerpt":"You'll need a Phoenix project with liveview set up in order to do this tutorial, if you don't have one run. We'll start by creating a…","fields":{"slug":"/blog/2022-06-18-liveview-table-with-search-filter/"},"frontmatter":{"title":"How to create Phoenix LiveView tables with search filter","date":"18 June, 2022"}}}]}},"pageContext":{"tag":"liveview"}},
-    "staticQueryHashes": ["3868140423"]}
