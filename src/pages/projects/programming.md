@@ -1,5 +1,6 @@
 ---
 title: Programming Projects
+date: '2021-09-30T18:00:00.000Z'
 image: './resources/peace.jpg'
 song: 'oogway - two years'
 backgroundColor: 'white'
