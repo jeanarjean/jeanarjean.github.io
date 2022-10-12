@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-jsx",
+    "path": "/tags/indiehacking/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"As someone who is very often working on side projects, I constantly go from: Being excited about working on side projects Doing awesome work…","fields":{"slug":"/blog/2022-10-12-side-project-mindset/"},"frontmatter":{"title":"Side Project Mindset","date":"12 October, 2022"}}}]}},"pageContext":{"tag":"indiehacking"}},
+    "staticQueryHashes": ["3868140423"]}
