@@ -8,4 +8,9 @@ You can visit the website [here](https://jeanarjean.com).
 
 Template used is available [here](https://github.com/gatsbyjs/gatsby-starter-blog).
 
+
 **Development happens on branch develop**
+Needs node version 14
+```bash
+nvm use 14
+```
