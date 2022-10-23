@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-jsx",
+    "path": "/tags/ecto/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"Added an event system that saves every change made to a database entity in OKR-One. It took more AND less work than expected at the same…","fields":{"slug":"/blog/2022-10-23-ceating-an-event-feed-system-with-phoenix/"},"frontmatter":{"title":"Ceating an Event Feed System with Phoenix","date":"23 October, 2022"}}}]}},"pageContext":{"tag":"ecto"}},
+    "staticQueryHashes": ["3868140423"]}
