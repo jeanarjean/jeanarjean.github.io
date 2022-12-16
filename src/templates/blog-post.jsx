@@ -8,7 +8,6 @@ import './blog-post.scss'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const image = post.frontmatter?.image?.childImageSharp.fluid.src
     const backgroundColor = post?.frontmatter?.backgroundColor
     const tags = post?.frontmatter?.tags
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -19,7 +18,6 @@ class BlogPostTemplate extends React.Component {
         <div
           className="post-container"
           style={{
-            backgroundImage: `url(${image})`,
             backgroundColor: `${backgroundColor}`
           }}
         >
@@ -78,7 +76,7 @@ function Tags(props) {
 
   return (
     <div>
-      {props.tags.map(function(tag) {
+      {props.tags.map(function (tag) {
         currentColorIndex = (currentColorIndex + 1) % 3
         return (
           <span key={tag}>
@@ -126,15 +124,6 @@ export const pageQuery = graphql`
         backgroundColor
         tags
         date(formatString: "MMMM DD, YYYY")
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2000) {
-              src
-              srcSet
-              sizes
-            }
-          }
-        }
       }
     }
   }
