@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-tags-jsx",
     "path": "/tags/",
-    "result": {"data":{"site":{"siteMetadata":{"title":"jean.arjean"}},"allMarkdownRemark":{"group":[{"fieldValue":"autofac","totalCount":1},{"fieldValue":"csharp","totalCount":3},{"fieldValue":"csproj","totalCount":3},{"fieldValue":"ecto","totalCount":1},{"fieldValue":"elixir","totalCount":4},{"fieldValue":"indie_hacking","totalCount":1},{"fieldValue":"liveview","totalCount":1},{"fieldValue":"msbuild","totalCount":1},{"fieldValue":"phoenix","totalCount":3},{"fieldValue":"xunit","totalCount":1}]}},"pageContext":{}},
+    "result": {"data":{"site":{"siteMetadata":{"title":"jean.arjean"}},"allMarkdownRemark":{"group":[{"fieldValue":"autofac","totalCount":1},{"fieldValue":"csharp","totalCount":3},{"fieldValue":"csproj","totalCount":3},{"fieldValue":"ecto","totalCount":1},{"fieldValue":"elixir","totalCount":4},{"fieldValue":"indie_hacking","totalCount":1},{"fieldValue":"landing page","totalCount":1},{"fieldValue":"liveview","totalCount":1},{"fieldValue":"msbuild","totalCount":1},{"fieldValue":"phoenix","totalCount":3},{"fieldValue":"react","totalCount":1},{"fieldValue":"tailwindcss","totalCount":1},{"fieldValue":"web","totalCount":1},{"fieldValue":"xunit","totalCount":1}]}},"pageContext":{}},
     "staticQueryHashes": ["3868140423"]}

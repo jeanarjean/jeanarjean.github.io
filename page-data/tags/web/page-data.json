@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tags-jsx",
+    "path": "/tags/web/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"If you're coming from a developper background, you might not want to use tools you're not familiar with and keep the flexibility of having…","fields":{"slug":"/blog/2023-06-27-how-to-create-a-simple-static-landing-page-for-your-business/"},"frontmatter":{"title":"How to setup a simple static landing page for your business within 5 minutes.","date":"27 June, 2023"}}}]}},"pageContext":{"tag":"web"}},
+    "staticQueryHashes": ["3868140423"]}
